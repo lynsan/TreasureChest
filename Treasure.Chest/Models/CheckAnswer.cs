@@ -6,11 +6,11 @@ namespace Treasure.Chest.Models
 {
     class CheckAnswer
     {
-        public bool CorrectValueAndPosition()
+        public bool CorrectValueAndPosition(int[] guess)
         {
             return true;
         }
-        public bool CorrectValueWrongPosition()
+        public bool CorrectValueWrongPosition(int[] guess)
         {
             return true;
         }
