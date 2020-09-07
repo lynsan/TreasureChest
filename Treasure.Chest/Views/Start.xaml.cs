@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -12,22 +10,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Treasure.Chest.Models;
-using Treasure.Chest.Views;
+using Treasure.Chest.ViewModels;
 
-namespace Treasure.Chest
+namespace Treasure.Chest.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Start.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Start : Page
     {
-        public MainWindow()
+        public Start()
         {
             InitializeComponent();
-            var page = new Start();
-            Main.Content = page;
+            DataContext = new StartViewModel();
         }
-
     }
 }

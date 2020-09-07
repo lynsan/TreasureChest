@@ -9,6 +9,9 @@
     <Grid>
         <Grid.Background>
         <ImageBrush ImageSource="/Assets/Beach.jpg"/>
-    </Grid.Background>
+        </Grid.Background>
+        <Frame x:Name="Main">
+            
+        </Frame>
     </Grid>
 </Window>
