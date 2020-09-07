@@ -6,5 +6,9 @@
         xmlns:local="clr-namespace:Treasure.Chest"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+    <Grid>
+        <Grid.Background>
+        <ImageBrush ImageSource="/Assets/Beach.jpg"/>
+    </Grid.Background>
+    </Grid>
 </Window>
