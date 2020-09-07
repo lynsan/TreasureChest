@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Treasure.Chest.Models;
+
 
 namespace Treasure.Chest
 {
@@ -24,5 +26,6 @@ namespace Treasure.Chest
         {
             InitializeComponent();
         }
+
     }
 }
