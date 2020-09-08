@@ -8,20 +8,44 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Game">
 
+
     <Grid>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBox Text="{Binding Num1}" MaxLength="1" Width="50" MinHeight="50" BorderBrush="Black" Name="Guess1"
-                     FontSize="30" BorderThickness="5" TextAlignment="Center"></TextBox>
+        <Grid Margin="30,200,400,30">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Assets/Chest.png"/>
 
-            <TextBox Text="{Binding Num2}" MaxLength="1" Width="50" MinHeight="50" BorderBrush="Black" Name="Guess2"
-                     FontSize="30" BorderThickness="5" TextAlignment="Center"></TextBox>
+            </Grid.Background>
 
-            <TextBox Text="{Binding Num3}" MaxLength="1" Width="50" MinHeight="50" BorderBrush="Black" Name="Guess3"
-                     FontSize="30" BorderThickness="5" TextAlignment="Center"></TextBox>
+        </Grid>
 
-            <TextBox Text="{Binding Num4}" MaxLength="1" Width="50" MinHeight="50" BorderBrush="Black" Name="Guess4"
-                     FontSize="30" BorderThickness="5" TextAlignment="Center"></TextBox>
+        <!--Stackpanel for textboxes in Treasure Chest-->
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="110,240,0,0" Width="225">
 
+            <TextBox Text="{Binding Num1}" MaxLength="1" Width="50" MinHeight="50" BorderBrush="Black" x:Name="Guess1"
+                     FontSize="30" BorderThickness="4" TextAlignment="Center"/>
+
+            <TextBox Text="{Binding Num2}" MaxLength="1" Width="50" MinHeight="50" BorderBrush="Black" x:Name="Guess2"
+                     FontSize="30" BorderThickness="4" TextAlignment="Center"/>
+
+            <TextBox Text="{Binding Num3}" MaxLength="1" Width="50" MinHeight="50" BorderBrush="Black" x:Name="Guess3"
+                     FontSize="30" BorderThickness="4" TextAlignment="Center"/>
+            <TextBox Text="{Binding Num4}" MaxLength="1" Width="50" MinHeight="50" BorderBrush="Black" x:Name="Guess4"
+                     FontSize="30" BorderThickness="4" TextAlignment="Center"/>
+
+        </StackPanel>
+
+        <!--Stackpanel for Number of tries Box-->
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="500,0,0,30" Width="280">
+
+            <Border Width="250" Height="320" CornerRadius="20" Background="White"/>
+
+        </StackPanel>
+
+        <!--Stackpanel for textbox Number of tries-->
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="550,0,0,300" Width="200">
+
+            <Label Content="Antal försök:" FontSize="22" FontWeight="Bold" Foreground="White">
+            </Label>
         </StackPanel>
 
     </Grid>
