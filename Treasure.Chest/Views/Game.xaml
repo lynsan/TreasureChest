@@ -9,6 +9,20 @@
       Title="Game">
 
     <Grid>
-        
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBox Text="{Binding Num1}" MaxLength="1" Width="50" MinHeight="50" BorderBrush="Black" Name="Guess1"
+                     FontSize="30" BorderThickness="5" TextAlignment="Center"></TextBox>
+
+            <TextBox Text="{Binding Num2}" MaxLength="1" Width="50" MinHeight="50" BorderBrush="Black" Name="Guess2"
+                     FontSize="30" BorderThickness="5" TextAlignment="Center"></TextBox>
+
+            <TextBox Text="{Binding Num3}" MaxLength="1" Width="50" MinHeight="50" BorderBrush="Black" Name="Guess3"
+                     FontSize="30" BorderThickness="5" TextAlignment="Center"></TextBox>
+
+            <TextBox Text="{Binding Num4}" MaxLength="1" Width="50" MinHeight="50" BorderBrush="Black" Name="Guess4"
+                     FontSize="30" BorderThickness="5" TextAlignment="Center"></TextBox>
+
+        </StackPanel>
+
     </Grid>
 </Page>
