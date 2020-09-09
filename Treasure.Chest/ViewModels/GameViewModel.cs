@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 
 namespace Treasure.Chest.ViewModels
 {
@@ -12,6 +13,7 @@ namespace Treasure.Chest.ViewModels
         public int Num2 { get; set; }
         public int Num3 { get; set; }
         public int Num4 { get; set; }
+        public ICommand PlayerGuessCommand {get; set;}
 
         public int[] PlayerGuess()
         {
@@ -21,5 +23,6 @@ namespace Treasure.Chest.ViewModels
             };
             return playerAnswer;
         }
+
     }
 }
