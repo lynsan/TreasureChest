@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Treasure.Chest.ViewModels;
 
 namespace Treasure.Chest.Views
 {
@@ -21,6 +22,9 @@ namespace Treasure.Chest.Views
         public Game()
         {
             InitializeComponent();
+
+            GameViewModel game = new GameViewModel();
+            DataContext = game;
         }
     }
 }
