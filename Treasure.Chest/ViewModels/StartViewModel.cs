@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Input;
 using Treasure.Chest.Models;
 using Treasure.Chest.ViewModels.Base;
+using Treasure.Chest.Views;
 
 namespace Treasure.Chest.ViewModels
 {
@@ -23,6 +24,7 @@ namespace Treasure.Chest.ViewModels
 
             //Visar siffrorna i en messagebox för att testa att det funkar
             MessageBox.Show(numbers.Numbers[0].ToString() + numbers.Numbers[1].ToString() + numbers.Numbers[2].ToString() + numbers.Numbers[3].ToString());
+            MainWindow.GoToPage(new Game());
         }
     }
 }
