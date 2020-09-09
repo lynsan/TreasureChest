@@ -10,39 +10,53 @@
 
 
     <Grid>
-        <Grid Margin="30,200,400,30">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="1">
             <Grid.Background>
                 <ImageBrush ImageSource="/Assets/Chest.png"/>
 
             </Grid.Background>
-
         </Grid>
 
         <!--Stackpanel for textboxes in Treasure Chest-->
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="110,240,0,0" Width="225">
+        <StackPanel Grid.Row="1"/>
 
-            <TextBox Text="{Binding Num1}" MaxLength="1" Width="50" MinHeight="50" BorderBrush="Black" x:Name="Guess1"
-                     FontSize="30" BorderThickness="4" TextAlignment="Center"/>
+        <TextBox Text="{Binding Num1}" MinHeight="50" MinWidth="50" BorderBrush="Black" x:Name="Guess1"
+                     FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Margin="30,63,185,112">
+            
+        </TextBox>
 
-            <TextBox Text="{Binding Num2}" MaxLength="1" Width="50" MinHeight="50" BorderBrush="Black" x:Name="Guess2"
-                     FontSize="30" BorderThickness="4" TextAlignment="Center"/>
+        <TextBox Text="{Binding Num2}" MaxLength="1" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess2"
+                     FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Margin="85,63,130,112"/>
 
-            <TextBox Text="{Binding Num3}" MaxLength="1" Width="50" MinHeight="50" BorderBrush="Black" x:Name="Guess3"
-                     FontSize="30" BorderThickness="4" TextAlignment="Center"/>
-            <TextBox Text="{Binding Num4}" MaxLength="1" Width="50" MinHeight="50" BorderBrush="Black" x:Name="Guess4"
-                     FontSize="30" BorderThickness="4" TextAlignment="Center"/>
+        <TextBox Text="{Binding Num3}" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess3"
+                     FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Margin="141,63,75,112"/>
 
-        </StackPanel>
+        <TextBox Text="{Binding Num4}" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess4"
+                     FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Margin="196,63,21,112"/>
 
-        <!--Stackpanel for Number of tries Box-->
-        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="500,0,0,30" Width="280">
-
-            <Border Width="250" Height="320" CornerRadius="20" Background="White"/>
+        <!--Box for showing previous attempts-->
+        <StackPanel Grid.Column="2" Grid.RowSpan="10" Margin="10,50">
+            <Border Width="250" 
+             MinHeight="320" 
+             CornerRadius="20" 
+             Background="White"/>
 
         </StackPanel>
 
         <!--Stackpanel for textbox Number of tries-->
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="550,0,0,300" Width="200">
+        <StackPanel Grid.Column="2">
 
             <Label Content="Antal försök:" FontSize="22" FontWeight="Bold" Foreground="White">
             </Label>
