@@ -29,5 +29,9 @@ namespace Treasure.Chest
             Main.Content = page;
         }
 
+        public static void GoToPage(Page page)
+        {
+            ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
+        }
     }
 }
