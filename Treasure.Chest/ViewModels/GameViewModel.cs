@@ -13,7 +13,7 @@ namespace Treasure.Chest.ViewModels
         public int Num2 { get; set; }
         public int Num3 { get; set; }
         public int Num4 { get; set; }
-        public ICommand PlayerGuessCommand {get; set;}
+        public ICommand GuessCommand { get; set;}
 
         public int[] PlayerGuess()
         {
