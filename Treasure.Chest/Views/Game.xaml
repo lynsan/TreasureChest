@@ -85,6 +85,12 @@
                 <RowDefinition/>
 
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
             <Label Grid.Row="0" Content="{Binding Place0}" FontSize="20" Foreground="Black" HorizontalAlignment="Center"/>
             <Label Grid.Row="1" Content="{Binding Place1}" FontSize="20" Foreground="Black" HorizontalAlignment="Center"/>
