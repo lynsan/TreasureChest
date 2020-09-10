@@ -25,6 +25,9 @@ namespace Treasure.Chest.Views
 
             GameViewModel game = new GameViewModel();
             DataContext = game;
+
         }
+
+        
     }
 }

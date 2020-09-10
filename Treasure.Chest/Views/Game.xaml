@@ -60,7 +60,14 @@
 
             <Label Content="Antal försök:" FontSize="22" FontWeight="Bold" Foreground="White">
             </Label>
+            
         </StackPanel>
+        <Button 
+                Content="Guess"
+                Command="{Binding GuessCommand}" 
+                Width="100"
+                Height="40"
+            />
 
     </Grid>
 </Page>
