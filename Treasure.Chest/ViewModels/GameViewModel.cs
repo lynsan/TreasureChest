@@ -30,7 +30,6 @@ namespace Treasure.Chest.ViewModels
         }
 
 
-
         public void GetPlayerGuess()
         {
             int[] playerGuess = new int[]
@@ -46,9 +45,14 @@ namespace Treasure.Chest.ViewModels
 
             GetPlayerGuess();
             //MessageBox.Show(CorrectAnswer[0].ToString() + CorrectAnswer[1].ToString() + CorrectAnswer[2].ToString() + CorrectAnswer[3].ToString());
-            MessageBox.Show(PlayerGuess[0].ToString() + PlayerGuess[1].ToString() + PlayerGuess[2].ToString() + PlayerGuess[3].ToString());
-
+            //MessageBox.Show(PlayerGuess[0].ToString() + PlayerGuess[1].ToString() + PlayerGuess[2].ToString() + PlayerGuess[3].ToString());
+            int[] checkedAnswer = new int[4];
+            checkedAnswer = CheckAnswer.CorrectValueWrongPosition(PlayerGuess,CorrectAnswer);
+            MessageBox.Show(checkedAnswer[0].ToString() + checkedAnswer[1].ToString() + checkedAnswer[2].ToString() + checkedAnswer[3].ToString());
+      
         }
+
+
 
 
 
