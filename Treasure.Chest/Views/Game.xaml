@@ -30,44 +30,97 @@
         </Grid>
 
         <!--Stackpanel for textboxes in Treasure Chest-->
-        <StackPanel Grid.Row="1"/>
+        <!--<StackPanel Grid.Row="1" --><!--Grid.Column="0"--><!--/>-->
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-        <TextBox Text="{Binding Num1}" MinHeight="50" MinWidth="50" BorderBrush="Black" x:Name="Guess1"
-                     FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Margin="30,63,185,112">
-            
-        </TextBox>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox Text="{Binding Num1}" MaxLength="1" MinHeight="50" MinWidth="50" BorderBrush="Black" x:Name="Guess1" 
+                     FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Grid.Column="0">
 
-        <TextBox Text="{Binding Num2}" MaxLength="1" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess2"
-                     FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Margin="85,63,130,112"/>
+            </TextBox>
 
-        <TextBox Text="{Binding Num3}" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess3"
-                     FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Margin="141,63,75,112"/>
+            <TextBox Text="{Binding Num2}" MaxLength="1" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess2"
+                     FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Grid.Column="1"/>
 
-        <TextBox Text="{Binding Num4}" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess4"
-                     FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Margin="196,63,21,112"/>
+            <TextBox Text="{Binding Num3}" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess3"
+                     FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Grid.Column="2"/>
 
+            <TextBox Text="{Binding Num4}" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess4"
+                     FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Grid.Column="3"/>
+
+        </Grid>
+        
+       
         <!--Box for showing previous attempts-->
         <StackPanel Grid.Column="2" Grid.RowSpan="10" Margin="10,50">
             <Border Width="250" 
-             MinHeight="320" 
+             Height="350" 
              CornerRadius="20" 
              Background="White"/>
 
         </StackPanel>
 
-        <!--Stackpanel for textbox Number of tries-->
+        <!-- row definitions for number of tries-->
+        <Grid Grid.Column="2" Grid.RowSpan="10" Margin="10,50">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Content="{Binding Place0}" FontSize="20" Foreground="Black" HorizontalAlignment="Center"/>
+            <Label Grid.Row="1" Content="{Binding Place1}" FontSize="20" Foreground="Black" HorizontalAlignment="Center"/>
+            <Label Grid.Row="2" Content="{Binding Place2}" FontSize="20" Foreground="Black" HorizontalAlignment="Center"/>
+            <Label Grid.Row="3" Content="{Binding Place3}" FontSize="20" Foreground="Black" HorizontalAlignment="Center"/>
+            <Label Grid.Row="4" Content="{Binding Place4}" FontSize="20" Foreground="Black" HorizontalAlignment="Center"/>
+            <Label Grid.Row="5" Content="{Binding Place5}" FontSize="20" Foreground="Black" HorizontalAlignment="Center"/>
+            <Label Grid.Row="6" Content="{Binding Place6}" FontSize="20" Foreground="Black" HorizontalAlignment="Center" />
+            <Label Grid.Row="7" Content="{Binding Place7}" FontSize="20" Foreground="Black" HorizontalAlignment="Center"/>
+            <Label Grid.Row="8" Content="{Binding Place8}" FontSize="20" Foreground="Black" HorizontalAlignment="Center" />
+
+
+        </Grid>
+
+        <!--textbox Number of tries-->
         <StackPanel Grid.Column="2">
 
             <Label Content="Antal försök:" FontSize="22" FontWeight="Bold" Foreground="White">
             </Label>
-            
         </StackPanel>
-        <Button 
-                Content="Guess"
-                Command="{Binding GuessCommand}" 
-                Width="100"
-                Height="40"
-            />
-
+        <Button x:Name="btnGuess" Content="Gissa" HorizontalAlignment="Center" Command="{Binding GuessCommand}"
+                VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" FontSize="20" FontWeight="Bold" Padding="10">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
+            </Button.Effect>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Page>
