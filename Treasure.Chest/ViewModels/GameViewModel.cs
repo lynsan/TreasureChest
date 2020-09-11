@@ -25,6 +25,10 @@ namespace Treasure.Chest.ViewModels
         public int[] PlayerGuess { get; set; }
         public int[] CorrectAnswer { get; set; }
 
+        public string Position0 { get; set; }
+        public string Position1 { get; set; }
+        public string Position2 { get; set; }
+        public string Position3 { get; set; }
 
         public GameViewModel()
         {
@@ -54,8 +58,10 @@ namespace Treasure.Chest.ViewModels
             int[] checkedAnswer = new int[4];
             checkedAnswer = CheckAnswer.CorrectValueWrongPosition(PlayerGuess,CorrectAnswer);
             MessageBox.Show(checkedAnswer[0].ToString() + checkedAnswer[1].ToString() + checkedAnswer[2].ToString() + checkedAnswer[3].ToString());
-           
-      
+            Position0 = PlayerGuess[0].ToString(); 
+            Position1 = PlayerGuess[1].ToString();
+            Position2 = PlayerGuess[2].ToString();
+            Position3 = PlayerGuess[3].ToString();
         }
         
 
