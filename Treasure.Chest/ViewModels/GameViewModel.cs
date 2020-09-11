@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
@@ -7,9 +8,10 @@ using Treasure.Chest.Models;
 using Treasure.Chest.ViewModels.Base;
 using Treasure.Chest.Views;
 
+
 namespace Treasure.Chest.ViewModels
 {
-    class GameViewModel
+    class GameViewModel :INotifyPropertyChanged
     {
         //här ska vi kontrollera gissningar mot svaret
         public ICommand GuessCommand { get; set; }
@@ -18,6 +20,7 @@ namespace Treasure.Chest.ViewModels
         public int Num2 { get; set; }
         public int Num3 { get; set; }
         public int Num4 { get; set; }
+       
 
         public int[] PlayerGuess { get; set; }
         public int[] CorrectAnswer { get; set; }
@@ -27,8 +30,10 @@ namespace Treasure.Chest.ViewModels
         {
             GuessCommand = new RelayCommand(CompareAnswers);
             CorrectAnswer = StartViewModel.SendNumbers();
+       
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public void GetPlayerGuess()
         {
@@ -49,8 +54,10 @@ namespace Treasure.Chest.ViewModels
             int[] checkedAnswer = new int[4];
             checkedAnswer = CheckAnswer.CorrectValueWrongPosition(PlayerGuess,CorrectAnswer);
             MessageBox.Show(checkedAnswer[0].ToString() + checkedAnswer[1].ToString() + checkedAnswer[2].ToString() + checkedAnswer[3].ToString());
+           
       
         }
+        
 
 
 

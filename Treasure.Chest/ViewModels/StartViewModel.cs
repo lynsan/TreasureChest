@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
@@ -9,9 +10,10 @@ using Treasure.Chest.Views;
 
 namespace Treasure.Chest.ViewModels
 {
-    class StartViewModel
+    class StartViewModel 
     {
         
+
         //public int Numbers { get; set; }
         public ICommand PlayCommand { get; set; }
         
@@ -21,7 +23,7 @@ namespace Treasure.Chest.ViewModels
         {
             PlayCommand = new RelayCommand(GetNumbers);
         }
-
+       
         public void GetNumbers()
         {
 

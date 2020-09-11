@@ -58,6 +58,8 @@
 
             <TextBox Text="{Binding Num4}" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess4"
                      FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Grid.Column="3"/>
+            
+           
 
         </Grid>
         
@@ -67,7 +69,9 @@
             <Border Width="250" 
              Height="350" 
              CornerRadius="20" 
-             Background="White"/>
+             Background="White">
+            
+            </Border>
 
         </StackPanel>
 
