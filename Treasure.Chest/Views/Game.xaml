@@ -53,10 +53,10 @@
             <TextBox Text="{Binding Num2}" MaxLength="1" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess2"
                      FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Grid.Column="1"/>
 
-            <TextBox Text="{Binding Num3}" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess3"
+            <TextBox Text="{Binding Num3}" MaxLength="1" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess3"
                      FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Grid.Column="2"/>
 
-            <TextBox Text="{Binding Num4}" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess4"
+            <TextBox Text="{Binding Num4}" MaxLength="1" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess4"
                      FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Grid.Column="3"/>
             
            
