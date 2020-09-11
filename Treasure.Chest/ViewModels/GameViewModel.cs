@@ -14,8 +14,10 @@ namespace Treasure.Chest.ViewModels
     class GameViewModel :INotifyPropertyChanged
     {
         //här ska vi kontrollera gissningar mot svaret
-        public ICommand GuessCommand { get; set; }
+        #region Properties
 
+        public ICommand GuessCommand { get; set; }
+        
         public int Num1 { get; set; }
         public int Num2 { get; set; }
         public int Num3 { get; set; }
@@ -24,7 +26,7 @@ namespace Treasure.Chest.ViewModels
 
         public int[] PlayerGuess { get; set; }
         public int[] CorrectAnswer { get; set; }
-
+        #endregion
 
         public GameViewModel()
         {
