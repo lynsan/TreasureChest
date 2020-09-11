@@ -12,10 +12,11 @@ namespace Treasure.Chest.ViewModels
 {
     class StartViewModel 
     {
-        
+        #region Properties
 
-        //public int Numbers { get; set; }
         public ICommand PlayCommand { get; set; }
+
+        #endregion
         
         public static int[] correctAnswer = new int[4];
 
@@ -23,19 +24,15 @@ namespace Treasure.Chest.ViewModels
         {
             PlayCommand = new RelayCommand(GetNumbers);
         }
-       
+
         public void GetNumbers()
         {
-
             RandomNumbers numbers = new RandomNumbers();
+
             //Visar siffrorna i en messagebox för att testa att det funkar
             MessageBox.Show(numbers.Numbers[0].ToString() + numbers.Numbers[1].ToString() + numbers.Numbers[2].ToString() + numbers.Numbers[3].ToString());
             correctAnswer = numbers.Numbers;
-            //correctAnswer[0] = numbers.Numbers[0];
-            //correctAnswer[1] = numbers.Numbers[1];
-            //correctAnswer[2] = numbers.Numbers[2];
-            //correctAnswer[3] = numbers.Numbers[3];
-            
+
             MainWindow.GoToPage(new Game());
         }
 
