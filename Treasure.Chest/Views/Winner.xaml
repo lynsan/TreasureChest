@@ -9,6 +9,27 @@
       Title="Winner">
 
     <Grid>
-        
+
+        <Grid Grid.Column="3"  Grid.Row="2" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+        </Grid>
+
+        <Grid>
+
+            <Label Content="Grattis! Du klarade spelet" FontSize="20" FontWeight="Bold" Height="50" Width="300" Margin="250,100,250,300" Grid.Row="1"/>
+            <Label Content="Namn:" FontSize="20" FontWeight="Bold" Height="40" Width="100" Margin="250,150,450,250" Grid.Row="1"> </Label>
+
+            <TextBox x:Name="WinnerName" Height="25" MinWidth="100" Margin="350,150,300,250" Grid.Row="1">    </TextBox>
+        </Grid>
     </Grid>
 </Page>
