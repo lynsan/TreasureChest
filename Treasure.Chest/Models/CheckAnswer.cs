@@ -10,14 +10,16 @@ namespace Treasure.Chest.Models
         //metoden för att kontrollera om gissningen stämmer överens med rätt svar
   
         public static int[] CorrectValueAndPosition(int[] playerGuess, int [] Numbers)
-
         {
+           
+
             for (int i = 0; i < playerGuess.Length; i++)
             {
                 if (playerGuess[i] == Numbers[i])
                 {
                     playerGuess[i] = 1;
                 }
+               
                 else 
                 { 
                     playerGuess[i] = 0;
@@ -46,6 +48,29 @@ namespace Treasure.Chest.Models
             return correctValueWrongPosition;
         }
 
+
+       
+        public static bool IsWinner(int[] playerGuess)
+        {
+            
+            for (int i = 0; i < playerGuess.Length; i++)
+            {
+                if (playerGuess[i] == 1)
+                {
+                    i++;
+
+                }
+                else
+                {
+                    return false;
+                }
+               
+            }
+
+            return true;
+
+
+        }
 
 
     }
