@@ -12,12 +12,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\Beach.jpg" />
-    <Resource Include="Assets\Chest.png" />
+    <PackageReference Include="PropertyChanged.Fody" Version="3.2.9" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\" />
+    <Resource Include="Assets\Beach.jpg" />
+    <Resource Include="Assets\Chest.png" />
   </ItemGroup>
 
 </Project>
