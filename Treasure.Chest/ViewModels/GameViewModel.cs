@@ -17,7 +17,7 @@ namespace Treasure.Chest.ViewModels
         #region Properties
 
         public ICommand GuessCommand { get; set; }
-        
+
         public int Num1 { get; set; }
         public int Num2 { get; set; }
         public int Num3 { get; set; }
@@ -26,6 +26,7 @@ namespace Treasure.Chest.ViewModels
 
         public int[] PlayerGuess { get; set; }
         public int[] CorrectAnswer { get; set; }
+       
 
         public string Position0 { get; set; }
         public string Position1 { get; set; }
@@ -37,7 +38,7 @@ namespace Treasure.Chest.ViewModels
         {
             GuessCommand = new RelayCommand(CompareAnswers);
             CorrectAnswer = StartViewModel.SendNumbers();
-       
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -65,13 +66,21 @@ namespace Treasure.Chest.ViewModels
 
             bool correctAnswer;
             correctAnswer = CheckAnswer.IsWinner(checkedAnswer);
-            MessageBox.Show(correctAnswer.ToString());
+            GetWinner(correctAnswer);
 
-            Position0 = PlayerGuess[0].ToString(); 
+            Position0 = PlayerGuess[0].ToString();
             Position1 = PlayerGuess[1].ToString();
             Position2 = PlayerGuess[2].ToString();
             Position3 = PlayerGuess[3].ToString();
         }
+        public void GetWinner(bool correctAnswer)
+        {
+            if (correctAnswer)
+            {
+                MainWindow.GoToPage(new Winner());
+            }
+        }
+
 
 
 
