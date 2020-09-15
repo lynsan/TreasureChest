@@ -28,15 +28,14 @@
 
             </Grid.Background>
         </Grid>
+    
+        <Label Content="Grattis! Du klarade spelet" FontSize="18" FontWeight="Black" Foreground="Black" Grid.Column="1" HorizontalAlignment="Center" Margin="15,130,15,25" ></Label>
 
-        <Label Content="Grattis! Du klarade spelet" FontSize="20" Foreground="Black" Grid.Column="1" HorizontalAlignment="Center" Margin="15,130,15,25" ></Label>
+        <Label Content="Namn:" FontSize="18" FontWeight="Bold" Foreground="Black" Grid.Column="1" Grid.Row="1"></Label>
 
-        <Label Content="Namn:"  Foreground="Black" FontSize="18"  Grid.Column="1" Margin="10,0,180,180" Grid.Row="1" >
-        </Label>
-
-        <TextBox x:Name="TxtBoxWinner"  Foreground="Black" Background="White" BorderThickness="3" Grid.Column="1" Grid.Row="1" MinWidth=" 100" Margin="100,5,2,190" >
-        </TextBox>
-
+        <TextBox Text="{Binding Player.Name}" Grid.Row="1" Grid.Column="1" Foreground="Black" Margin="90,5,5,180" MinHeight="50" MinWidth="100"
+                 FontSize="16" FontWeight="Bold" BorderThickness="4"></TextBox>
+        
 
         <!--Förberett spara knapp, -->
         <Button x:Name="BtnSaveWin" Content="Spara" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" FontSize="20" FontWeight="Bold" Padding="10">
