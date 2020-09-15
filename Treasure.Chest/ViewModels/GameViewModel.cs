@@ -27,10 +27,10 @@ namespace Treasure.Chest.ViewModels
         public int[] PlayerGuess { get; set; }
         public int[] CorrectAnswer { get; set; }
 
-        public string Position0 { get; set; }
-        public string Position1 { get; set; }
-        public string Position2 { get; set; }
-        public string Position3 { get; set; }
+        public string Position0_0 { get; set; }
+        public string Position0_1 { get; set; }
+        public string Position0_2 { get; set; }
+        public string Position0_3 { get; set; }
         #endregion
 
         public GameViewModel()
@@ -59,12 +59,12 @@ namespace Treasure.Chest.ViewModels
             //MessageBox.Show(CorrectAnswer[0].ToString() + CorrectAnswer[1].ToString() + CorrectAnswer[2].ToString() + CorrectAnswer[3].ToString());
             //MessageBox.Show(PlayerGuess[0].ToString() + PlayerGuess[1].ToString() + PlayerGuess[2].ToString() + PlayerGuess[3].ToString());
             int[] checkedAnswer = new int[4];
-            checkedAnswer = CheckAnswer.CorrectValueWrongPosition(PlayerGuess,CorrectAnswer);
+            checkedAnswer = CheckAnswer.CheckValueAndPosition(PlayerGuess,CorrectAnswer);
             MessageBox.Show(checkedAnswer[0].ToString() + checkedAnswer[1].ToString() + checkedAnswer[2].ToString() + checkedAnswer[3].ToString());
-            Position0 = PlayerGuess[0].ToString(); 
-            Position1 = PlayerGuess[1].ToString();
-            Position2 = PlayerGuess[2].ToString();
-            Position3 = PlayerGuess[3].ToString();
+            Position0_0 = PlayerGuess[0].ToString(); 
+            Position0_1 = PlayerGuess[1].ToString();
+            Position0_2 = PlayerGuess[2].ToString();
+            Position0_3 = PlayerGuess[3].ToString();
         }
         
 

@@ -7,43 +7,30 @@ namespace Treasure.Chest.Models
 {
     abstract class CheckAnswer
     {
-        //metoden för att kontrollera om gissningen stämmer överens med rätt svar
-  
-        public static int[] CorrectValueAndPosition(int[] playerGuess, int [] Numbers)
 
+        public static int[] CheckValueAndPosition(int[] playerGuess, int[] Numbers)
         {
-            for (int i = 0; i < playerGuess.Length; i++)
-            {
-                if (playerGuess[i] == Numbers[i])
-                {
-                    playerGuess[i] = 1;
-                }
-                else 
-                { 
-                    playerGuess[i] = 0;
-                }
-            }
-            return playerGuess;
-        }
-        public static int[] CorrectValueWrongPosition(int[] playerGuess, int[] Numbers)
-        {
-            int[] correctValueWrongPosition = new int[4];
+            int[] checkValueAndPosition = new int[4];
             for (int i = 0; i < playerGuess.Length; i++)
             {
                 for (int j = 0; j < playerGuess.Length; j++)
                 {
-                    if (playerGuess[i] == Numbers[j])
+                    if (playerGuess[i] == Numbers[i])
                     {
-                        correctValueWrongPosition[i] = 1;
+                        checkValueAndPosition[i] = 1; //correct value and position
+                    }
+                    else if (playerGuess[i] == Numbers[j])
+                    {
+                        checkValueAndPosition[i] = 2; //correct value wrong position
                         break;
                     }
                     else
                     {
-                        correctValueWrongPosition[i] = 0;
+                        checkValueAndPosition[i] = 0; //totally wrong
                     }
                 }
             }
-            return correctValueWrongPosition;
+            return checkValueAndPosition;
         }
 
 

@@ -96,16 +96,11 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Label Grid.Column="0" Grid.Row="0" Content="{Binding Position0}" FontSize="20"  MinHeight="30" MinWidth="50" Background="White" Foreground="Black" HorizontalAlignment="Center"/>
-            <Label Grid.Column="1" Grid.Row="0" Content="{Binding Position1}" FontSize="20"  MinHeight="30" MinWidth="50" Background="White" Foreground="Black" HorizontalAlignment="Center"/>
-            <Label Grid.Column="2" Grid.Row="0" Content="{Binding Position2}" FontSize="20"  MinHeight="30" MinWidth="50" Background="White" Foreground="Black" HorizontalAlignment="Center"/>
-            <Label Grid.Column="3" Grid.Row="0" Content="{Binding Position3}" FontSize="20"  MinHeight="30" MinWidth="50" Background="White" Foreground="Black" HorizontalAlignment="Center"/>
-            <!--<Label Grid.Row="4" Content="{Binding Place4}" FontSize="20" Foreground="Black" HorizontalAlignment="Center"/>
-            <Label Grid.Row="5" Content="{Binding Place5}" FontSize="20" Foreground="Black" HorizontalAlignment="Center"/>
-            <Label Grid.Row="6" Content="{Binding Place6}" FontSize="20" Foreground="Black" HorizontalAlignment="Center" />
-            <Label Grid.Row="7" Content="{Binding Place7}" FontSize="20" Foreground="Black" HorizontalAlignment="Center"/>
-            <Label Grid.Row="8" Content="{Binding Place8}" FontSize="20" Foreground="Black" HorizontalAlignment="Center" />-->
-
+            <Label Grid.Row="0" Grid.Column="0" Content="{Binding Position0_0}" FontSize="20"  MinHeight="30" MinWidth="50" Background="White" Foreground="Black" HorizontalAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="1" Content="{Binding Position0_1}" FontSize="20"  MinHeight="30" MinWidth="50" Background="White" Foreground="Black" HorizontalAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="2" Content="{Binding Position0_2}" FontSize="20"  MinHeight="30" MinWidth="50" Background="White" Foreground="Black" HorizontalAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="3" Content="{Binding Position0_3}" FontSize="20"  MinHeight="30" MinWidth="50" Background="White" Foreground="Black" HorizontalAlignment="Center"/>
+ 
 
         </Grid>
 
