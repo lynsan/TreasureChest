@@ -10,6 +10,6 @@ namespace Treasure.Chest.Models
         public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public DateTime Time { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public int Score { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int playTime { get; set; }
+        public int PlayTime { get; set; }
     }
 }
