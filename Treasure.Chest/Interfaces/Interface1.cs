@@ -9,5 +9,6 @@ namespace Treasure.Chest.Interfaces
         public string Name { get; set; }
         public DateTime Time { get; set; }
         public int Score { get; set; }
+       
     }
 }
