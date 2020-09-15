@@ -20,7 +20,7 @@ namespace Treasure.Chest.Repositories
 
         public Player GetPlayer(string playerName, int score, int playTime)
         {
-            string stmt = "playername, score, playtime";
+            string stmt = "select playername, score, playtime from players where score=@score";
 
             using (var conn = new NpgsqlConnection(connectionString))
             {
@@ -29,6 +29,10 @@ namespace Treasure.Chest.Repositories
                 using (var command = new NpgsqlCommand(stmt, conn))
                 using (var reader = command.ExecuteReader())
                 {
+                    command.Parameters.AddWithValue("playername", playerName);
+                    command.Parameters.AddWithValue("score", score);
+                    command.Parameters.AddWithValue("playtime", playTime);
+
                     while (reader.Read())
                     {
                         player = new Player
@@ -42,5 +46,36 @@ namespace Treasure.Chest.Repositories
                 return player;
             }
         }
+        public static IEnumerable<Player> GetPlayers(string playerName, int score, int playTime)
+        {
+            string stmt = "select playername, score, playtime from players";
+
+            using(var conn = new NpgsqlConnection(connectionString))
+            {
+                 Player player = null;
+                 List<Player> players = new List<Player>();
+                 conn.Open();
+
+                using (var command = new NpgsqlCommand(stmt, conn))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            player = new Player
+                            {
+                                Name = (string)reader["playername"],
+                                Score = (int)reader["score"],
+                                PlayTime = (int)reader["playtime"],
+                            };
+                            players.Add(player);
+                        }
+                    }
+                    return players;
+                }
+            }
+
+            }
+        }
     }
-}
+
