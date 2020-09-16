@@ -15,6 +15,7 @@ namespace Treasure.Chest.ViewModels
         #region Properties
 
         public ICommand PlayCommand { get; set; }
+        public ICommand HighscoreCommand { get; set; }
 
         #endregion
         
@@ -23,6 +24,7 @@ namespace Treasure.Chest.ViewModels
         public StartViewModel()
         {
             PlayCommand = new RelayCommand(GetNumbers);
+            HighscoreCommand = new RelayCommand(GetHighscore);
         }
 
         public void GetNumbers()
@@ -34,6 +36,10 @@ namespace Treasure.Chest.ViewModels
             correctAnswer = numbers.Numbers;
 
             MainWindow.GoToPage(new Game());
+        }
+        public void GetHighscore()
+        {
+            MainWindow.GoToPage(new Highscore());
         }
 
         public static int[] SendNumbers()
