@@ -10,42 +10,43 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
         </Grid.RowDefinitions>
-            <Label Grid.Row="0" Grid.Column="1" Content="Highscore" Foreground="White" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" ></Label>
-        
+        <Image Source="/Assets/Highscore.png" Grid.Column="1"/>
+        <!--<Image Source="/Assets/EmptyScroll_RotatedAndCropped.png" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Stretch="Fill"/>-->
         <Border  
              CornerRadius="0" 
-             Background="White"
+             Background="Transparent"
              Grid.Column="1"
-             Grid.Row="1">
-            
-            
-            <DataGrid Background="White" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="True">
+             Grid.Row="1" 
+             BorderBrush="Transparent" >
+
+
+            <DataGrid CanUserAddRows="False" CanUserDeleteRows="False" Background="Transparent" RowBackground="Transparent">
 
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
-                        <Setter Property="Background" Value="SpringGreen"></Setter>
+                        <Setter Property="Background" Value="#FFD8B387"></Setter>
                         <Setter Property="FontWeight" Value="Bold"></Setter>
-                        <Setter Property="BorderThickness" Value="1,0,1,2"></Setter>
-                        <Setter Property="BorderBrush" Value="Green"></Setter>
+                        <!--<Setter Property="BorderThickness" Value="1,0,1,2"></Setter>
+                        <Setter Property="BorderBrush" Value="#FFD8B387"></Setter>-->
                         <Setter Property="MinHeight" Value="20"></Setter>
-                        
                     </Style>
                 </DataGrid.Resources>
+              
                 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Player Name" Width="2*"/>
+                    <DataGridTextColumn Header="Name" Width="2*"/>
                     <DataGridTextColumn  Header="Score" Width="1*"/>
                     <DataGridTextColumn  Header="Time" Width="2*"/>
                 </DataGrid.Columns>
-                
+
             </DataGrid>
         </Border>
 
