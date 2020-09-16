@@ -4,10 +4,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Treasure.Chest.Views"
+      xmlns:vm="clr-namespace:Treasure.Chest.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Game">
-
+    <Page.Resources>
+        <ResourceDictionary>
+            <vm:CorrectTypeToColorConverter x:Key="ColorConverter" />
+        </ResourceDictionary>
+    </Page.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -58,59 +63,30 @@
 
             <TextBox Text="{Binding Num4}" MaxLength="1" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess4"
                      FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Grid.Column="3"/>
-            
-           
+
+
 
         </Grid>
-        
-       
-        <!--Box for showing previous attempts-->
-        <StackPanel Grid.Column="2" Grid.RowSpan="10" Margin="10,50">
-            <Border Width="250" 
-             Height="350" 
-             CornerRadius="0" 
-             Background="White">
-            
-            </Border>
 
-        </StackPanel>
-
-        <!-- row definitions for number of tries-->
-        <Grid Grid.Column="2" Grid.RowSpan="10" Margin="10,50">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
-            <Label Grid.Row="0" Grid.Column="0" Content="{Binding Position0_0}" FontSize="20"  MinHeight="30" MinWidth="50" Background="White" Foreground="Black" HorizontalAlignment="Center"/>
-            <Label Grid.Row="0" Grid.Column="1" Content="{Binding Position0_1}" FontSize="20"  MinHeight="30" MinWidth="50" Background="White" Foreground="Black" HorizontalAlignment="Center"/>
-            <Label Grid.Row="0" Grid.Column="2" Content="{Binding Position0_2}" FontSize="20"  MinHeight="30" MinWidth="50" Background="White" Foreground="Black" HorizontalAlignment="Center"/>
-            <Label Grid.Row="0" Grid.Column="3" Content="{Binding Position0_3}" FontSize="20"  MinHeight="30" MinWidth="50" Background="White" Foreground="Black" HorizontalAlignment="Center"/>
- 
-
-        </Grid>
+        <ListBox Grid.ColumnSpan="2" Grid.Column="1" Margin="256,69,57,46" Grid.RowSpan="2"
+                 ItemsSource="{Binding Guesses}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding FirstGuess.Number}" Background="{Binding FirstGuess.CorrectType, Converter={StaticResource ColorConverter}}" FontSize="20"></Label>
+                        <Label Content="{Binding SecondGuess.Number}" Background="{Binding SecondGuess.CorrectType, Converter={StaticResource ColorConverter}}" FontSize="20"></Label>
+                        <Label Content="{Binding ThirdGuess.Number}" Background="{Binding ThirdGuess.CorrectType, Converter={StaticResource ColorConverter}}" FontSize="20"></Label>
+                        <Label Content="{Binding FourthGuess.Number}" Background="{Binding FourthGuess.CorrectType, Converter={StaticResource ColorConverter}}" FontSize="20"></Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
         <!--textbox Number of tries-->
         <StackPanel Grid.Column="2">
-
-            <Label Content="Antal försök:" FontSize="22" FontWeight="Bold" Foreground="White">
-            </Label>
+            <Label Content="Number of Tries:" FontSize="22" FontWeight="Bold" Foreground="White"/>
         </StackPanel>
-        <Button x:Name="btnGuess" Content="Gissa" HorizontalAlignment="Center" Command="{Binding GuessCommand}"
+        <Button x:Name="btnGuess" Content="Guess" HorizontalAlignment="Center" Command="{Binding GuessCommand}"
                 VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" FontSize="20" FontWeight="Bold" Padding="10">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
