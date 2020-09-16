@@ -24,5 +24,10 @@ namespace Treasure.Chest.Views
             InitializeComponent();
             DataContext = new StartViewModel();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
