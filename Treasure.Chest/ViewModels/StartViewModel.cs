@@ -34,7 +34,7 @@ namespace Treasure.Chest.ViewModels
             RandomNumbers numbers = new RandomNumbers();
 
             //Visar siffrorna i en messagebox för att testa att det funkar
-            MessageBox.Show(numbers.Numbers[0].ToString() + numbers.Numbers[1].ToString() + numbers.Numbers[2].ToString() + numbers.Numbers[3].ToString());
+            //MessageBox.Show(numbers.Numbers[0].ToString() + numbers.Numbers[1].ToString() + numbers.Numbers[2].ToString() + numbers.Numbers[3].ToString());
             correctAnswer = numbers.Numbers;
 
             MainWindow.GoToPage(new Game());
