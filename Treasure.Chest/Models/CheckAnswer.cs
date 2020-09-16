@@ -8,29 +8,63 @@ namespace Treasure.Chest.Models
     abstract class CheckAnswer
     {
 
-        public static int[] CheckValueAndPosition(int[] playerGuess, int[] Numbers)
+        public static void CheckValueAndPosition(Guess guess, int[] numbers)
         {
-            int[] playerInput = new int[4];
-            for (int i = 0; i < playerGuess.Length; i++)
+            //first
+            if(guess.FirstGuess.Number == numbers[0])
             {
-                for (int j = 0; j < playerGuess.Length; j++)
-                {
-                    if (playerGuess[i] == Numbers[i])
-                    {
-                        playerInput[i] = 1; //correct value and position
-                    }
-                    else if (playerGuess[i] == Numbers[j])
-                    {
-                        playerInput[i] = 2; //correct value wrong position
-                        break;
-                    }
-                    else
-                    {
-                        playerInput[i] = 0; //totally wrong
-                    }
-                }
+                guess.FirstGuess.CorrectType = CorrectType.CorrectNumberAndPlace;
             }
-            return playerInput;
+            else if(guess.FirstGuess.Number == numbers[1] || guess.FirstGuess.Number == numbers[2] || guess.FirstGuess.Number == numbers[3])
+            {
+                guess.FirstGuess.CorrectType = CorrectType.CorrectNumber;
+            }
+            else
+            {
+               guess.FirstGuess.CorrectType = CorrectType.Incorrect;
+            }
+
+            //second
+            if (guess.SecondGuess.Number == numbers[1])
+            {
+                guess.SecondGuess.CorrectType = CorrectType.CorrectNumberAndPlace;
+            }
+            else if (guess.SecondGuess.Number == numbers[0] || guess.SecondGuess.Number == numbers[2] || guess.SecondGuess.Number == numbers[3])
+            {
+                guess.SecondGuess.CorrectType = CorrectType.CorrectNumber;
+            }
+            else
+            {
+                guess.SecondGuess.CorrectType = CorrectType.Incorrect;
+            }
+
+            //third
+            if (guess.ThirdGuess.Number == numbers[2])
+            {
+                guess.ThirdGuess.CorrectType = CorrectType.CorrectNumberAndPlace;
+            }
+            else if (guess.ThirdGuess.Number == numbers[0] || guess.ThirdGuess.Number == numbers[1] || guess.ThirdGuess.Number == numbers[3])
+            {
+                guess.ThirdGuess.CorrectType = CorrectType.CorrectNumber;
+            }
+            else
+            {
+                guess.ThirdGuess.CorrectType = CorrectType.Incorrect;
+            }
+
+            //fourth
+            if (guess.FourthGuess.Number == numbers[3])
+            {
+                guess.FourthGuess.CorrectType = CorrectType.CorrectNumberAndPlace;
+            }
+            else if (guess.FourthGuess.Number == numbers[1] || guess.FourthGuess.Number == numbers[2] || guess.FourthGuess.Number == numbers[0])
+            {
+                guess.FourthGuess.CorrectType = CorrectType.CorrectNumber;
+            }
+            else
+            {
+                guess.FourthGuess.CorrectType = CorrectType.Incorrect;
+            }
         }
 
 
@@ -39,5 +73,5 @@ namespace Treasure.Chest.Models
 
 
 
-    }
+}
 

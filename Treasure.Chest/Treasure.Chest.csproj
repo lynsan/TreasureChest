@@ -20,4 +20,8 @@
     <Resource Include="Assets\Chest.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Converters\" />
+  </ItemGroup>
+
 </Project>
