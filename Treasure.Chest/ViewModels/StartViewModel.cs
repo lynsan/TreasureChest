@@ -45,7 +45,7 @@ namespace Treasure.Chest.ViewModels
         }
         public void GetRules()
         {
-            //Go to rules page
+            MainWindow.GoToPage(new Rules());
         }
 
         public static int[] SendNumbers()
