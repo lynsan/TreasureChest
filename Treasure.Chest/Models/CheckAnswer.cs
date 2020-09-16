@@ -10,8 +10,8 @@ namespace Treasure.Chest.Models
 
         public static void CheckValueAndPosition(Guess guess, int[] numbers)
         {
-            //first
-            if(guess.FirstGuess.Number == numbers[0])
+            #region FirstGuess
+            if (guess.FirstGuess.Number == numbers[0])
             {
                 guess.FirstGuess.CorrectType = CorrectType.CorrectNumberAndPlace;
             }
@@ -23,8 +23,9 @@ namespace Treasure.Chest.Models
             {
                guess.FirstGuess.CorrectType = CorrectType.Incorrect;
             }
+            #endregion
 
-            //second
+            #region SecondGuess
             if (guess.SecondGuess.Number == numbers[1])
             {
                 guess.SecondGuess.CorrectType = CorrectType.CorrectNumberAndPlace;
@@ -37,8 +38,9 @@ namespace Treasure.Chest.Models
             {
                 guess.SecondGuess.CorrectType = CorrectType.Incorrect;
             }
+            #endregion
 
-            //third
+            #region ThirdGuess
             if (guess.ThirdGuess.Number == numbers[2])
             {
                 guess.ThirdGuess.CorrectType = CorrectType.CorrectNumberAndPlace;
@@ -51,8 +53,9 @@ namespace Treasure.Chest.Models
             {
                 guess.ThirdGuess.CorrectType = CorrectType.Incorrect;
             }
+            #endregion
 
-            //fourth
+            #region FourthGuess
             if (guess.FourthGuess.Number == numbers[3])
             {
                 guess.FourthGuess.CorrectType = CorrectType.CorrectNumberAndPlace;
@@ -65,6 +68,7 @@ namespace Treasure.Chest.Models
             {
                 guess.FourthGuess.CorrectType = CorrectType.Incorrect;
             }
+            #endregion
         }
 
 
