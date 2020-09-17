@@ -8,7 +8,14 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Rules">
 
-    <Grid>
-        
-    </Grid>
+        <Grid Margin="-16,-127,-16,-141" >
+            <Grid.Background >
+            <ImageBrush ImageSource="/Assets/EmptyScroll.png"/>
+        </Grid.Background>
+
+        <StackPanel Margin="-14,103,-14,-70">
+            <Label Content="How to play" FontSize="18" FontWeight="Black" Foreground="Black" HorizontalAlignment="Center" Margin="0,115,0,276" />
+        </StackPanel>
+        <TextBlock Text="{Binding GameRules}" FontSize="15" FontWeight="Bold" Foreground="Black" Margin="145,257,128,221"/>
+        </Grid>
 </Page>

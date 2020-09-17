@@ -42,20 +42,10 @@ namespace Treasure.Chest.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void GetPlayerGuess()
-        {
-            int[] playerGuess = new int[]
-            {
-                Num1,Num2, Num3, Num4
-            };
-            PlayerGuess = playerGuess; 
-
-        }
-   
+ 
         public void CompareAnswers()
         {
 
-            GetPlayerGuess();
             Guess guess = new Guess()
             {
                 FirstGuess = new SmallGuess { Number = Num1},
