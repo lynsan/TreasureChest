@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Navigation;
 using System.Xaml.Schema;
 using Treasure.Chest.Models;
 using Treasure.Chest.ViewModels.Base;
@@ -26,6 +27,7 @@ namespace Treasure.Chest.ViewModels
        
         public int[] PlayerGuess { get; set; }
         public int[] CorrectAnswer { get; set; }
+        public int Score { get; set; } = 0;
 
 
         #endregion
@@ -37,10 +39,12 @@ namespace Treasure.Chest.ViewModels
         {
             GuessCommand = new RelayCommand(CompareAnswers);
             CorrectAnswer = StartViewModel.SendNumbers();
-
+ 
         }
+       
 
         public event PropertyChangedEventHandler PropertyChanged;
+     
 
         public void GetPlayerGuess()
         {
@@ -48,14 +52,14 @@ namespace Treasure.Chest.ViewModels
             {
                 Num1,Num2, Num3, Num4
             };
-            PlayerGuess = playerGuess; 
+            PlayerGuess = playerGuess;
 
         }
-   
+
         public void CompareAnswers()
         {
-
-            GetPlayerGuess();
+            Score++;
+            //GetPlayerGuess();
             Guess guess = new Guess()
             {
                 FirstGuess = new SmallGuess { Number = Num1},
@@ -65,8 +69,31 @@ namespace Treasure.Chest.ViewModels
             };
             CheckAnswer.CheckValueAndPosition(guess, CorrectAnswer);
             Guesses.Add(guess);
+            IsWinner();
+            RegistratePlayer();
 
         }
+       public bool IsWinner()
+        {
+            Guess guess = new Guess();
 
+            for (int i = 0; i < PlayerGuess.Length; i++)
+            {
+                if (PlayerGuess[i] == CorrectAnswer[i])
+                {
+                    
+                }
+                else
+                {
+
+                }
+            }return true;
+            
+            
+        }
+        public void RegistratePlayer()
+        {  
+            MainWindow.GoToPage(new Winner());
+        }
     }
 }
