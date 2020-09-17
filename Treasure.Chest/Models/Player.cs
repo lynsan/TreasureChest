@@ -5,7 +5,7 @@ using Treasure.Chest.Interfaces;
 
 namespace Treasure.Chest.Models
 {
-    class Player : IPlayer
+    public class Player : IPlayer
     {
         public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public DateTime Time { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
