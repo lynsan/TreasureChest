@@ -23,7 +23,7 @@ namespace Treasure.Chest.Views
         {
             InitializeComponent();
 
-            GameViewModel winner = new GameViewModel();
+            WinnerViewModel winner = new WinnerViewModel();
             DataContext = winner;
         }
     }
