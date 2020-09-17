@@ -31,7 +31,18 @@
             BorderBrush="Transparent">
 
 
-            <DataGrid x:Name="HighscoreList" CanUserDeleteRows="False" Background="Transparent" RowBackground="Transparent" BorderBrush="Transparent">
+
+            <DataGrid x:Name="HighscoreList" 
+                      CanUserDeleteRows="False" 
+                      Background="Transparent" 
+                      RowBackground="Transparent" 
+                      BorderBrush="Transparent" 
+                      ItemsSource="{Binding Players}" 
+                      AutoGenerateColumns="False" 
+                      Margin="10,10,10,10"
+                      CanUserAddRows="False"
+                      CanUserResizeColumns="False" HorizontalAlignment="Left" Width="230">
+
 
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
@@ -41,17 +52,17 @@
                         <Setter Property="BorderBrush" Value="#FFD8B387"></Setter>-->
                         <Setter Property="MinHeight" Value="20"></Setter>
                         <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-                        
+
                     </Style>
                 </DataGrid.Resources>
-              
-                
+
+
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="2*"/>
                     <DataGridTextColumn  Binding="{Binding Score}"  Header="Score" Width="1*"/>
                     <DataGridTextColumn  Binding="{Binding Time}"  Header="Time" Width="2*"/>
                 </DataGrid.Columns>
-                
+
 
             </DataGrid>
         </Border>

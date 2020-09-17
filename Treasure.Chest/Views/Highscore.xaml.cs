@@ -26,5 +26,8 @@ namespace Treasure.Chest.Views
             HighscoreViewModel highscore = new HighscoreViewModel();
             DataContext = highscore;
         }
+
+        
+
     }
 }
