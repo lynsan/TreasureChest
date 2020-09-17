@@ -59,7 +59,7 @@ namespace Treasure.Chest.ViewModels
         public void CompareAnswers()
         {
             Score++;
-            //GetPlayerGuess();
+            GetPlayerGuess();
             Guess guess = new Guess()
             {
                 FirstGuess = new SmallGuess { Number = Num1},
@@ -72,10 +72,10 @@ namespace Treasure.Chest.ViewModels
             IsWinner();
             RegistratePlayer();
 
+            
         }
        public bool IsWinner()
         {
-            Guess guess = new Guess();
 
             for (int i = 0; i < PlayerGuess.Length; i++)
             {
@@ -85,15 +85,25 @@ namespace Treasure.Chest.ViewModels
                 }
                 else
                 {
-
+                    return false;
                 }
             }return true;
-            
+
             
         }
+
+        
         public void RegistratePlayer()
-        {  
-            MainWindow.GoToPage(new Winner());
+        {
+            
+            if (IsWinner()== true)
+            {
+                MainWindow.GoToPage(new Winner());
+            }
         }
+
+
+
+        
     }
 }

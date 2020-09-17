@@ -31,7 +31,6 @@ namespace Treasure.Chest.Repositories
                     //command.Parameters.AddWithValue("score", player.Score);
                     //command.Parameters.AddWithValue("playtime", player.PlayTime);
                     //command.Parameters.AddWithValue("player_id", player.id);
-                    
                     int id = (int)command.ExecuteScalar();
                     player.Id = id;
                     return id;
@@ -77,7 +76,7 @@ namespace Treasure.Chest.Repositories
         }
         public static IEnumerable<Player> GetPlayers(string playerName, int score, int playTime)
         {
-            string stmt = "select playername, score, playtime from players";
+            string stmt = "select playername, score, playtime from players order by score asc";
 
             using(var conn = new NpgsqlConnection(connectionString))
             {
