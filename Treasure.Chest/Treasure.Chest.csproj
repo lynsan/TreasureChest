@@ -23,4 +23,8 @@
     <Resource Include="Assets\PaperRollWinner.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Converters\" />
+  </ItemGroup>
+
 </Project>

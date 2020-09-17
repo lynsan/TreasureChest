@@ -1,9 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
+using System.Xaml.Schema;
 using Treasure.Chest.Models;
 using Treasure.Chest.ViewModels.Base;
 using Treasure.Chest.Views;
@@ -13,26 +14,24 @@ namespace Treasure.Chest.ViewModels
 {
     class GameViewModel :INotifyPropertyChanged
     {
-        //här ska vi kontrollera gissningar mot svaret
+        
         #region Properties
 
         public ICommand GuessCommand { get; set; }
-
+        
         public int Num1 { get; set; }
         public int Num2 { get; set; }
         public int Num3 { get; set; }
         public int Num4 { get; set; }
        
-
         public int[] PlayerGuess { get; set; }
         public int[] CorrectAnswer { get; set; }
-       
 
-        public string Position0 { get; set; }
-        public string Position1 { get; set; }
-        public string Position2 { get; set; }
-        public string Position3 { get; set; }
+
         #endregion
+
+        public ObservableCollection<Guess> Guesses { get; set; } = new ObservableCollection<Guess>();
+
 
         public GameViewModel()
         {
@@ -57,32 +56,17 @@ namespace Treasure.Chest.ViewModels
         {
 
             GetPlayerGuess();
-            //MessageBox.Show(CorrectAnswer[0].ToString() + CorrectAnswer[1].ToString() + CorrectAnswer[2].ToString() + CorrectAnswer[3].ToString());
-            //MessageBox.Show(PlayerGuess[0].ToString() + PlayerGuess[1].ToString() + PlayerGuess[2].ToString() + PlayerGuess[3].ToString());
-
-            int[] checkedAnswer = new int[4];
-            checkedAnswer = CheckAnswer.CorrectValueAndPosition(PlayerGuess,CorrectAnswer);
-            //MessageBox.Show(checkedAnswer[0].ToString() + checkedAnswer[1].ToString() + checkedAnswer[2].ToString() + checkedAnswer[3].ToString());
-
-            bool correctAnswer;
-            correctAnswer = CheckAnswer.IsWinner(checkedAnswer);
-            GetWinner(correctAnswer);
-
-            Position0 = PlayerGuess[0].ToString();
-            Position1 = PlayerGuess[1].ToString();
-            Position2 = PlayerGuess[2].ToString();
-            Position3 = PlayerGuess[3].ToString();
-        }
-        public void GetWinner(bool correctAnswer)
-        {
-            if (correctAnswer)
+            Guess guess = new Guess()
             {
-                MainWindow.GoToPage(new Winner());
-            }
+                FirstGuess = new SmallGuess { Number = Num1},
+                SecondGuess = new SmallGuess { Number = Num2},
+                ThirdGuess = new SmallGuess { Number = Num3},
+                FourthGuess = new SmallGuess { Number = Num4}
+            };
+            CheckAnswer.CheckValueAndPosition(guess, CorrectAnswer);
+            Guesses.Add(guess);
+
         }
-
-
-
 
     }
 }
