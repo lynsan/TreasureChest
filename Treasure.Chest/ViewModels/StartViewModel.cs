@@ -22,7 +22,7 @@ namespace Treasure.Chest.ViewModels
 
         public static int[] correctAnswer = new int[4];
 
-        public string GameRules { get; set; } = "You are a code breaker, and your goal is to guess the secret code to open \nthe treasure chest. The code is a sequence of numbers, and in each round \nafter you make a guess, you will get hints which will lead you closer to \nguessing the secret code. Repeat this until you figure out the secret code. \nThe hints are either GREEN background or YELLOW background: \nGREEN background = your guess is correct and is in the correct position \nYELLOW background = your guess is correct but is in the wrong position";
+        public string GameRules { get; set; } = "You are a code breaker, and your goal is to guess the secret code to open \nthe treasure chest. The code is a sequence of numbers between 0 and 9, \nand note that the same number can take place several times. In each round \nafter you make a guess, you will get hints which will lead you closer \nto guessing the secret code. Repeat this until you figure out the secret code. \nThe hints are either GREEN background or YELLOW background: \nGREEN background = your guess is correct and is in the correct position \nYELLOW background = your guess is correct but is in the wrong position";
 
         public StartViewModel()
         {

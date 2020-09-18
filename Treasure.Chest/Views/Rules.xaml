@@ -16,6 +16,6 @@
         <StackPanel Margin="-14,103,-14,-70">
             <Label Content="How to play" FontSize="18" FontWeight="Black" Foreground="Black" HorizontalAlignment="Center" Margin="0,115,0,276" />
         </StackPanel>
-        <TextBlock Text="{Binding GameRules}" FontSize="15" FontWeight="Bold" Foreground="Black" Margin="145,257,128,221"/>
+        <TextBlock Text="{Binding GameRules}" FontSize="15" FontWeight="Bold" Foreground="Black" Margin="149,251,124,227"/>
         </Grid>
 </Page>
