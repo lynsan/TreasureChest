@@ -9,15 +9,28 @@
   <ItemGroup>
     <None Remove="Assets\Beach.jpg" />
     <None Remove="Assets\Chest.png" />
+    <None Remove="Assets\EmptyScroll.png" />
+    <None Remove="Assets\Highscore.png" />
+    <None Remove="Assets\HighscoreBackground.png" />
+    <None Remove="Assets\PaperRollWinner.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Npgsql" Version="4.1.4" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.2.9" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Assets\Beach.jpg" />
     <Resource Include="Assets\Chest.png" />
+    <Resource Include="Assets\EmptyScroll.png" />
+    <Resource Include="Assets\Highscore.png" />
+    <Resource Include="Assets\HighscoreBackground.png" />
+    <Resource Include="Assets\PaperRollWinner.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Converters\" />
   </ItemGroup>
 
 </Project>

@@ -9,11 +9,44 @@
       Title="Start">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
         <Button 
                 Content="Play"
                 Command="{Binding PlayCommand}" 
                 Width="100"
                 Height="40"
+                Grid.Column="1"
+                Grid.Row="1"
+                VerticalAlignment="Bottom"
+            />
+        <Button 
+                Content="Highscore"
+                Command="{Binding HighscoreCommand}" 
+                Width="100"
+                Height="40"
+                Grid.Column="1"
+                Grid.Row="2"
+            />
+        <Button 
+                Content="How to play"
+                Command="{Binding RulesCommand}" 
+                Width="100"
+                Height="40"
+                Grid.Column="1"
+                Grid.Row="3"
+                VerticalAlignment="Top"
             />
     </Grid>
 </Page>

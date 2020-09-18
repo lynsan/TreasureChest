@@ -5,10 +5,11 @@ using Treasure.Chest.Interfaces;
 
 namespace Treasure.Chest.Models
 {
-    class Player : IPlayer
+    public class Player : IPlayer
     {
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime Time { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Score { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public DateTime PlayTime { get; set; }
+        public int Score { get; set; }
     }
 }

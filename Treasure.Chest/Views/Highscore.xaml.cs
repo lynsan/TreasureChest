@@ -10,24 +10,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Treasure.Chest.Models;
 using Treasure.Chest.ViewModels;
 
 namespace Treasure.Chest.Views
 {
     /// <summary>
-    /// Interaction logic for Start.xaml
+    /// Interaction logic for Highscore.xaml
     /// </summary>
-    public partial class Start : Page
+    public partial class Highscore : Page
     {
-        public Start()
+        public Highscore()
         {
             InitializeComponent();
-            DataContext = new StartViewModel();
+            HighscoreViewModel highscore = new HighscoreViewModel();
+            DataContext = highscore;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
+        
 
-        }
     }
 }
