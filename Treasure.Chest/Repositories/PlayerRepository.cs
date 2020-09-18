@@ -67,7 +67,7 @@ namespace Treasure.Chest.Repositories
                         {
                             Name = (string)reader["playername"],
                             Score = (int)reader["score"],
-                            PlayTime = (int)reader["playtime"],
+                            //PlayTime = (int)reader["playtime"],
                         };
                     }
                 }  
@@ -94,7 +94,7 @@ namespace Treasure.Chest.Repositories
                             {
                                 Name = (string)reader["playername"],
                                 Score = (int)reader["score"],
-                                PlayTime = (int)reader["playtime"],
+                                //PlayTime = (int)reader["playtime"],
                             };
                             players.Add(player);
                         }

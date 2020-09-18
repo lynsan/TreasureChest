@@ -39,5 +39,14 @@
                 Grid.Column="1"
                 Grid.Row="2"
             />
+        <Button 
+                Content="How to play"
+                Command="{Binding RulesCommand}" 
+                Width="100"
+                Height="40"
+                Grid.Column="1"
+                Grid.Row="3"
+                VerticalAlignment="Top"
+            />
     </Grid>
 </Page>

@@ -9,6 +9,9 @@
   <ItemGroup>
     <None Remove="Assets\Beach.jpg" />
     <None Remove="Assets\Chest.png" />
+    <None Remove="Assets\EmptyScroll.png" />
+    <None Remove="Assets\Highscore.png" />
+    <None Remove="Assets\HighscoreBackground.png" />
     <None Remove="Assets\PaperRollWinner.png" />
   </ItemGroup>
 
@@ -20,6 +23,9 @@
   <ItemGroup>
     <Resource Include="Assets\Beach.jpg" />
     <Resource Include="Assets\Chest.png" />
+    <Resource Include="Assets\EmptyScroll.png" />
+    <Resource Include="Assets\Highscore.png" />
+    <Resource Include="Assets\HighscoreBackground.png" />
     <Resource Include="Assets\PaperRollWinner.png" />
   </ItemGroup>
 

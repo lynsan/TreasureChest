@@ -10,43 +10,81 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="10*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
         </Grid.RowDefinitions>
-            <Label Grid.Row="0" Grid.Column="1" Content="Highscore" Foreground="White" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" ></Label>
+        <Image Source="/Assets/Highscore.png" Grid.Column="2"/>
+        <Image Source="/Assets/HighscoreBackground.png" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Stretch="Fill" VerticalAlignment="Top"/>
+
+        <Grid Grid.Row="2" Grid.Column="2">
+
+          <!--  <ListBox Background="Transparent" Margin="5,0,5,0" ItemsSource="{Binding Players}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding Name}" FontSize="20"></Label>
+                            <Label Content="{Binding Score}" FontSize="20"></Label>
+                            <Label Content="{Binding Time}"  FontSize="20"></Label>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox> -->
+            
+            
+        </Grid>
         
         <Border  
-             CornerRadius="0" 
-             Background="White"
-             Grid.Column="1"
-             Grid.Row="1">
-            
-            
-            <DataGrid Background="White" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="True">
+            CornerRadius="0" 
+            Background="Transparent"
+            Grid.Column="2"
+            Grid.Row="2" 
+            BorderBrush="Transparent">
+
+
+
+            <DataGrid x:Name="HighscoreList" 
+                      CanUserDeleteRows="False" 
+                      Background="Transparent" 
+                      RowBackground="Transparent" 
+                      BorderBrush="Transparent" 
+                      ItemsSource="{Binding Players}" 
+                      AutoGenerateColumns="False" 
+                      Margin="10,10,10,10"
+                      CanUserAddRows="False"
+                      CanUserResizeColumns="False" HorizontalAlignment="Left" Width="230"
+                      CanUserSortColumns="True"
+                       >
+
 
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
-                        <Setter Property="Background" Value="SpringGreen"></Setter>
+                        <Setter Property="Background" Value="Transparent"></Setter>
                         <Setter Property="FontWeight" Value="Bold"></Setter>
-                        <Setter Property="BorderThickness" Value="1,0,1,2"></Setter>
-                        <Setter Property="BorderBrush" Value="Green"></Setter>
+                        
                         <Setter Property="MinHeight" Value="20"></Setter>
+                        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+
                     </Style>
                 </DataGrid.Resources>
-                
+
+
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Player Name" Width="2*"/>
-                    <DataGridTextColumn  Header="Score" Width="1*"/>
-                    <DataGridTextColumn  Header="Time" Width="2*"/>
+                    <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="2*"/>
+                    <DataGridTextColumn  Binding="{Binding Score}"  Header="Score" Width="1*"/>
+                    <DataGridTextColumn  Binding="{Binding PlayTime, StringFormat=t}"  Header="Time" Width="2*"/>
                 </DataGrid.Columns>
-                
+
+
             </DataGrid>
-        </Border>
+        </Border> 
 
     </Grid>
 </Page>

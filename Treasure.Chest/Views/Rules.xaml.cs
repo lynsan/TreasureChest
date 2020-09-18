@@ -15,19 +15,14 @@ using Treasure.Chest.ViewModels;
 namespace Treasure.Chest.Views
 {
     /// <summary>
-    /// Interaction logic for Start.xaml
+    /// Interaction logic for Rules.xaml
     /// </summary>
-    public partial class Start : Page
+    public partial class Rules : Page
     {
-        public Start()
+        public Rules()
         {
             InitializeComponent();
             DataContext = new StartViewModel();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
