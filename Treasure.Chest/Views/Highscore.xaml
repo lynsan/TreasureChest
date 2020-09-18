@@ -23,6 +23,24 @@
         </Grid.RowDefinitions>
         <Image Source="/Assets/Highscore.png" Grid.Column="2"/>
         <Image Source="/Assets/HighscoreBackground.png" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Stretch="Fill" VerticalAlignment="Top"/>
+
+        <Grid Grid.Row="2" Grid.Column="2">
+
+          <!--  <ListBox Background="Transparent" Margin="5,0,5,0" ItemsSource="{Binding Players}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding Name}" FontSize="20"></Label>
+                            <Label Content="{Binding Score}" FontSize="20"></Label>
+                            <Label Content="{Binding Time}"  FontSize="20"></Label>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox> -->
+            
+            
+        </Grid>
+        
         <Border  
             CornerRadius="0" 
             Background="Transparent"
@@ -41,15 +59,16 @@
                       AutoGenerateColumns="False" 
                       Margin="10,10,10,10"
                       CanUserAddRows="False"
-                      CanUserResizeColumns="False" HorizontalAlignment="Left" Width="230">
+                      CanUserResizeColumns="False" HorizontalAlignment="Left" Width="230"
+                      CanUserSortColumns="True"
+                       >
 
 
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="Transparent"></Setter>
                         <Setter Property="FontWeight" Value="Bold"></Setter>
-                        <!--<Setter Property="BorderThickness" Value="1,0,1,2"></Setter>
-                        <Setter Property="BorderBrush" Value="#FFD8B387"></Setter>-->
+                        
                         <Setter Property="MinHeight" Value="20"></Setter>
                         <Setter Property="HorizontalAlignment" Value="Center"></Setter>
 
@@ -60,12 +79,12 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="2*"/>
                     <DataGridTextColumn  Binding="{Binding Score}"  Header="Score" Width="1*"/>
-                    <DataGridTextColumn  Binding="{Binding Time}"  Header="Time" Width="2*"/>
+                    <DataGridTextColumn  Binding="{Binding Time, StringFormat=t}"  Header="Time" Width="2*"/>
                 </DataGrid.Columns>
 
 
             </DataGrid>
-        </Border>
+        </Border> 
 
     </Grid>
 </Page>
