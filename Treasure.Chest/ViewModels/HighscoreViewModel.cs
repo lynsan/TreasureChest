@@ -17,6 +17,11 @@ namespace Treasure.Chest.ViewModels
             player.Score = 4;
             player.Time = DateTime.Now;
             Players.Add(player);
+            Player player2 = new Player();
+            player2.Name = "Lisa";
+            player2.Score = 6;
+            player2.Time = DateTime.Now;
+            Players.Add(player2);
         }
 
     }
