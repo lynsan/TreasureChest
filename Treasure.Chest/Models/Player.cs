@@ -7,8 +7,9 @@ namespace Treasure.Chest.Models
 {
     public class Player : IPlayer
     {
+        public int Id { get; set; }
         public string Name { get; set; }
-        public DateTime Time { get; set; }
+        public DateTime PlayTime { get; set; }
         public int Score { get; set; }
     }
 }

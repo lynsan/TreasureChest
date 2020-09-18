@@ -12,15 +12,17 @@ namespace Treasure.Chest.ViewModels
 
         public HighscoreViewModel()
         {
+
+            //Test players for testing highscorepage
             Player player = new Player();
             player.Name = "bob";
             player.Score = 4;
-            player.Time = DateTime.Now;
+            player.PlayTime = DateTime.Now;
             Players.Add(player);
             Player player2 = new Player();
             player2.Name = "Lisa";
             player2.Score = 6;
-            player2.Time = DateTime.Now;
+            player2.PlayTime = DateTime.Now;
             Players.Add(player2);
         }
 
