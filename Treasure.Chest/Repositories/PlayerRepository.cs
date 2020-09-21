@@ -19,7 +19,7 @@ namespace Treasure.Chest.Repositories
         #region Create
         public static int AddPlayer(Player player)
         {
-            string stmt = "INSERT INTO players (playername) values(@playername) returning id";
+            string stmt = "INSERT INTO players (playername, score) values(@playername, @score) returning id";
 
             using (var conn = new NpgsqlConnection(connectionString))
             {
@@ -28,9 +28,8 @@ namespace Treasure.Chest.Repositories
                
                 {
                     command.Parameters.AddWithValue("playername", player.Name);
-                    //command.Parameters.AddWithValue("score", player.Score);
+                    command.Parameters.AddWithValue("score", player.Score);
                     //command.Parameters.AddWithValue("playtime", player.PlayTime);
-                    //command.Parameters.AddWithValue("player_id", player.id);
                     int id = (int)command.ExecuteScalar();
                     player.Id = id;
                     return id;
