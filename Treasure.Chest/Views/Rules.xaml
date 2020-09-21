@@ -9,7 +9,7 @@
       Title="Rules">
 
         <Grid Margin="-16,-127,-16,-141" >
-            <Grid.Background >
+        <Grid.Background >
             <ImageBrush ImageSource="/Assets/EmptyScroll.png"/>
         </Grid.Background>
 

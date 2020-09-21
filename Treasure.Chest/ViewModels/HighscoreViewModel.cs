@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 using Treasure.Chest.Models;
+using Treasure.Chest.ViewModels.Base;
 using Treasure.Chest.Views;
 
 namespace Treasure.Chest.ViewModels
@@ -9,6 +11,7 @@ namespace Treasure.Chest.ViewModels
     class HighscoreViewModel
     {
         public List<Player> Players { get; set; } = new List<Player>();
+        public ICommand BackCommand { get; set; }
 
         public HighscoreViewModel()
         {
@@ -24,8 +27,13 @@ namespace Treasure.Chest.ViewModels
             player2.Score = 6;
             player2.PlayTime = DateTime.Now;
             Players.Add(player2);
-        }
 
+            BackCommand = new RelayCommand(GoToStart);
+        }
+        public void GoToStart()
+        {
+            MainWindow.GoToPage(new Start());
+        }
     }
     
 }

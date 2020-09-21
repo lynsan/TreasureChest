@@ -19,7 +19,8 @@ namespace Treasure.Chest.ViewModels
         #region Properties
 
         public ICommand GuessCommand { get; set; }
-        
+        public ICommand BackCommand { get; set; }
+
         public int Num1 { get; set; }
         public int Num2 { get; set; }
         public int Num3 { get; set; }
@@ -39,7 +40,7 @@ namespace Treasure.Chest.ViewModels
         {
             GuessCommand = new RelayCommand(CompareAnswers);
             CorrectAnswer = StartViewModel.SendNumbers();
- 
+            BackCommand = new RelayCommand(GoToStart);
         }
        
 
@@ -102,7 +103,10 @@ namespace Treasure.Chest.ViewModels
             }
         }
 
-
+        public void GoToStart()
+        {
+            MainWindow.GoToPage(new Start());
+        }
 
         
     }

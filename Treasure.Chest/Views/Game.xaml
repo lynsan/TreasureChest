@@ -25,6 +25,17 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Button x:Name="btnHighscore" Content="Back to start" HorizontalAlignment="Left" Command="{Binding BackCommand}"
+                VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" Padding="10">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
+            </Button.Effect>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
 
 
         <Grid Grid.Row="1">

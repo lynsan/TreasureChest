@@ -22,7 +22,7 @@ namespace Treasure.Chest.Views
         public Rules()
         {
             InitializeComponent();
-            DataContext = new StartViewModel();
+            DataContext = new RulesViewModel();
         }
     }
 }
