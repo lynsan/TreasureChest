@@ -106,10 +106,11 @@ namespace Treasure.Chest.ViewModels
 
         public static int GetScore()
         {
+
           return Score;
         }
 
+       
 
-        
     }
 }

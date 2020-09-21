@@ -45,9 +45,9 @@ namespace Treasure.Chest.Repositories
         #region READ
         // Hämta en specifik spelare (ett objekt av typen spelare)
 
-        public Player GetPlayer(string playerName, int score, int playTime)
+        public Player GetPlayer(string playerName, int score)
         {
-            string stmt = "select playername, score, playtime from players where score=@score";
+            string stmt = "select playername, score, from players where score=@score";
 
             using (var conn = new NpgsqlConnection(connectionString))
             {
@@ -58,7 +58,7 @@ namespace Treasure.Chest.Repositories
                 {
                     command.Parameters.AddWithValue("playername", playerName);
                     command.Parameters.AddWithValue("score", score);
-                    command.Parameters.AddWithValue("playtime", playTime);
+                    //command.Parameters.AddWithValue("playtime", playTime);
 
                     while (reader.Read())
                     {
@@ -73,9 +73,9 @@ namespace Treasure.Chest.Repositories
                 return player;
             }
         }
-        public static IEnumerable<Player> GetPlayers(string playerName, int score, int playTime)
+        public static IEnumerable<Player> GetPlayers(string playerName, int score)
         {
-            string stmt = "select playername, score, playtime from players order by score asc";
+            string stmt = "select playername, score, from players order by score asc";
 
             using(var conn = new NpgsqlConnection(connectionString))
             {
@@ -93,7 +93,7 @@ namespace Treasure.Chest.Repositories
                             {
                                 Name = (string)reader["playername"],
                                 Score = (int)reader["score"],
-                                PlayTime = (int)reader["playtime"],
+                                //PlayTime = (int)reader["playtime"],
                             };
                             players.Add(player);
                         }
@@ -101,7 +101,6 @@ namespace Treasure.Chest.Repositories
                     return players;
                 }
             }
-          
         }
         #endregion
     }

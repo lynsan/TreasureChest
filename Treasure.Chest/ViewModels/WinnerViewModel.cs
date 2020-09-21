@@ -14,7 +14,8 @@ namespace Treasure.Chest.ViewModels
         Player player= new Player();
         public string MyName { get; set; }
         public ICommand SaveCommand { get; set; }
-      
+
+        public int Score { get; set; } = GameViewModel.Score;
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -27,11 +28,11 @@ namespace Treasure.Chest.ViewModels
 
         public void AddPlayer()
         {
+
+
             player.Name = MyName;
             player.Score=GameViewModel.GetScore(); 
             PlayerRepository.AddPlayer(player);
-
-
         }
     }
 }
