@@ -27,17 +27,34 @@
             <RowDefinition/>
             
         </Grid.RowDefinitions>
-        <Button x:Name="btnHighscore" Content="Back to start" HorizontalAlignment="Left" Command="{Binding BackCommand}"
-                VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" Padding="10">
-            <Button.Effect>
-                <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
-            </Button.Effect>
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Button.Resources>
-        </Button>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btnHighscore" Content="Back to start" HorizontalAlignment="Left" Command="{Binding BackCommand}"
+                VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" FontSize="15" FontWeight="Bold" Padding="10" Width="130">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
+                </Button.Effect>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Content="How to play" HorizontalAlignment="Left" Command="{Binding RulesCommand}"
+                VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" FontSize="15" FontWeight="Bold" Padding="10" Width="130">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
+                </Button.Effect>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
 
 
         <Grid Grid.Row="1">

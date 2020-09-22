@@ -21,6 +21,7 @@ namespace Treasure.Chest.ViewModels
 
         public ICommand GuessCommand { get; set; }
         public ICommand BackCommand { get; set; }
+        public ICommand RulesCommand { get; set; }
 
         public int Num1 { get; set; }
         public int Num2 { get; set; }
@@ -43,6 +44,7 @@ namespace Treasure.Chest.ViewModels
             GuessCommand = new RelayCommand(CompareAnswers);
             CorrectAnswer = StartViewModel.SendNumbers();
             BackCommand = new RelayCommand(GoToStart);
+            RulesCommand = new RelayCommand(ShowRules);
         }
        
 
@@ -115,7 +117,10 @@ namespace Treasure.Chest.ViewModels
 
           return Score;
         }
-
+        public void ShowRules()
+        {
+            MainWindow.GoToPage(new Rules());
+        }
        
 
     }
