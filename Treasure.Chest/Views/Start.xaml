@@ -23,7 +23,7 @@
         </Grid.RowDefinitions>
 
         <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Center" Command="{Binding PlayCommand}"
-                VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" FontSize="20" FontWeight="Bold" Padding="10" Width="167">
+                VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" FontFamily="Georgia" FontSize="20" FontWeight="Bold" Padding="10" Width="155" BorderThickness="5" BorderBrush="Azure">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
             </Button.Effect>
@@ -35,7 +35,7 @@
         </Button>
 
         <Button x:Name="btnHighscore" Content="Highscore" HorizontalAlignment="Center" Command="{Binding HighscoreCommand}"
-                VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" FontSize="20" FontWeight="Bold" Padding="10" Width="167">
+                VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" FontFamily="Georgia" FontSize="20" FontWeight="Bold" Padding="10" Width="155" BorderThickness="5" BorderBrush="Azure">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
             </Button.Effect>
@@ -47,7 +47,7 @@
         </Button>
 
         <Button x:Name="btnRules" Content="How to play" HorizontalAlignment="Center" Command="{Binding RulesCommand}"
-                VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" FontSize="20" FontWeight="Bold" Padding="10" Width="167">
+                VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" FontFamily="Georgia" FontSize="20" FontWeight="Bold" Padding="10" Width="155" BorderThickness="5" BorderBrush="Azure">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
             </Button.Effect>
