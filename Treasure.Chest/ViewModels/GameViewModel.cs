@@ -11,6 +11,7 @@ using Treasure.Chest.ViewModels.Base;
 using Treasure.Chest.Views;
 
 
+
 namespace Treasure.Chest.ViewModels
 {
     class GameViewModel :INotifyPropertyChanged
@@ -28,11 +29,12 @@ namespace Treasure.Chest.ViewModels
        
         public int[] PlayerGuess { get; set; }
         public int[] CorrectAnswer { get; set; }
-        public int Score { get; set; } = 0;
+        public static int Score { get; set; } = 0;
 
 
         #endregion
 
+    
         public ObservableCollection<Guess> Guesses { get; set; } = new ObservableCollection<Guess>();
 
 
@@ -93,7 +95,6 @@ namespace Treasure.Chest.ViewModels
             
         }
 
-        
         public void RegistratePlayer()
         {
             
@@ -109,5 +110,13 @@ namespace Treasure.Chest.ViewModels
         }
 
         
+        public static int GetScore()
+        {
+
+          return Score;
+        }
+
+       
+
     }
 }
