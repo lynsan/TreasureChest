@@ -36,10 +36,10 @@ namespace Treasure.Chest.Repositories
                 }
             }
         }
-        internal static string AddPlayer(object player)
-        {
-            throw new NotImplementedException();
-        }
+        //internal static string AddPlayer(object player)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         #endregion
         #region READ
