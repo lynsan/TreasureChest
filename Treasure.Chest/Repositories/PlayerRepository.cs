@@ -36,10 +36,16 @@ namespace Treasure.Chest.Repositories
                 }
             }
         }
-        //internal static string AddPlayer(object player)
-        //{
-        //    throw new NotImplementedException();
-        //}
+
+        internal static List<Player> GetPlayers(object players)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static string AddPlayer(object player)
+        {
+            throw new NotImplementedException();
+        }
 
         #endregion
         #region READ
@@ -73,9 +79,9 @@ namespace Treasure.Chest.Repositories
                 return player;
             }
         }
-        public static IEnumerable<Player> GetPlayers(string playerName, int score)
+        public static IEnumerable<Player> GetPlayers()
         {
-            string stmt = "select playername, score, from players order by score asc";
+            string stmt = "SELECT playername, score FROM players order by score asc";
 
             using(var conn = new NpgsqlConnection(connectionString))
             {
