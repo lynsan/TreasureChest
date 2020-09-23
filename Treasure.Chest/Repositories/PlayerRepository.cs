@@ -81,7 +81,7 @@ namespace Treasure.Chest.Repositories
         }
         public static IEnumerable<Player> GetPlayers()
         {
-            string stmt = "SELECT playername, score FROM players order by score asc";
+            string stmt = "SELECT playername, score FROM players order by score asc limit 3";
 
             using(var conn = new NpgsqlConnection(connectionString))
             {

@@ -38,6 +38,7 @@ namespace Treasure.Chest.ViewModels
         public int[] PlayerGuess { get; set; }
         public int[] CorrectAnswer { get; set; }
         public static int Score { get; set; } = 0;
+        public string NumberOfTries { get; set;}
 
 
         #endregion
@@ -118,6 +119,7 @@ namespace Treasure.Chest.ViewModels
             {
                 VisibilityNotNumber = Visibility.Hidden;
                 Score++;
+                GetNumberOfTries();
                 GetPlayerGuess();
                 Guess guess = new Guess()
                 {
@@ -187,6 +189,10 @@ namespace Treasure.Chest.ViewModels
             Input4 = "";
         }
        
+        public void GetNumberOfTries()
+        {
+            NumberOfTries = $"Number Of Tries: {Score}";
+        }
 
         public void ShowRules()
         {

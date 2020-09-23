@@ -40,5 +40,7 @@ namespace Treasure.Chest.Views
                 ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
             }
         }
+
+
     }
 }
