@@ -6,6 +6,7 @@ using System.Windows.Input;
 using Treasure.Chest.Models;
 using Treasure.Chest.Repositories;
 using Treasure.Chest.ViewModels.Base;
+using Treasure.Chest.Views;
 
 namespace Treasure.Chest.ViewModels
 {
@@ -23,16 +24,22 @@ namespace Treasure.Chest.ViewModels
         public WinnerViewModel()
         {
             SaveCommand = new RelayCommand(AddPlayer);
+
         }
 
 
         public void AddPlayer()
         {
 
-
             player.Name = MyName;
             player.Score=GameViewModel.GetScore(); 
             PlayerRepository.AddPlayer(player);
+
+            GetHighscore();
+        }
+        public void GetHighscore()
+        {
+            MainWindow.GoToPage(new Highscore());
         }
     }
 }
