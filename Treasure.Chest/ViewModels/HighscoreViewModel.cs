@@ -13,7 +13,7 @@ namespace Treasure.Chest.ViewModels
 {
     class HighscoreViewModel
     {
-        public List<Player> Players { get; set; } = new List<Player>();
+        
         public ICommand BackCommand { get; set; }
         public List<Player> ShowPlayers { get; set; } = new List<Player>();
 
@@ -22,17 +22,6 @@ namespace Treasure.Chest.ViewModels
         {
             PresentPlayers();
 
-            //Test players for testing highscorepage
-            Player player = new Player();
-            player.Name = "bob";
-            player.Score = 4;
-            player.PlayTime = DateTime.Now;
-            Players.Add(player);
-            Player player2 = new Player();
-            player2.Name = "Lisa";
-            player2.Score = 6;
-            player2.PlayTime = DateTime.Now;
-            Players.Add(player2);
 
             BackCommand = new RelayCommand(GoToStart);
         }
@@ -44,7 +33,7 @@ namespace Treasure.Chest.ViewModels
             ShowPlayers= players.ToList();
 
         }
-    }
+    
         public void GoToStart()
         {
             MainWindow.GoToPage(new Start());

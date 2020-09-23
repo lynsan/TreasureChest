@@ -28,7 +28,7 @@
 
         <Grid Grid.ColumnSpan="3"  Grid.RowSpan="3" Grid.Column="1" >
             <Grid.Background >
-                <ImageBrush ImageSource="/Assets/EmptyScroll.png" />
+                <ImageBrush ImageSource="/Assets/FullScroll.png" />
 
             </Grid.Background>
         </Grid>
