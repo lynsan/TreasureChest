@@ -33,7 +33,7 @@
             </Grid.Background>
         </Grid>
 
-        <Label Content="Well done pirate!" FontSize="18" FontWeight="Black" Foreground="Black" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" ></Label>
+        <Label Content="Well done pirate!" FontSize="20" FontWeight="Black" Foreground="Black" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" ></Label>
 
         <Label Content="Name:" FontSize="18" FontWeight="Bold" Foreground="Black" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
 
@@ -47,7 +47,7 @@
         
 
         <!--Förberett spara knapp, -->
-        <Button  Command="{Binding SaveCommand}" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2" Grid.Column="2" FontSize="20" FontWeight="Bold" Padding="10" >
+        <Button  Command="{Binding SaveCommand}" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2" Grid.Column="2" FontFamily="Gerorgia" FontSize="20" FontWeight="Bold" Padding="10" Width="155" BorderThickness="5" BorderBrush="Azure" >
             <Button.Effect>
                 <DropShadowEffect BlurRadius="10"  ShadowDepth="5" Color="Black"></DropShadowEffect>
             </Button.Effect>
