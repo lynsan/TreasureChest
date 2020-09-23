@@ -82,18 +82,18 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBox TextChanged="Guess_TextChanged" Text="{Binding Input1}" MaxLength="1" MinHeight="50" MinWidth="50" BorderBrush="Black" x:Name="Guess1" 
+            <TextBox VerticalContentAlignment="Center" TextChanged="Guess_TextChanged" Text="{Binding Input1}" MaxLength="1" MinHeight="50" MinWidth="50" BorderBrush="Black" x:Name="Guess1" 
                      FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Grid.Column="0">
 
             </TextBox>
 
-            <TextBox TextChanged="Guess_TextChanged" Text="{Binding Input2}" MaxLength="1" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess2"
+            <TextBox VerticalContentAlignment="Center" TextChanged="Guess_TextChanged" Text="{Binding Input2}" MaxLength="1" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess2"
                      FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Grid.Column="1"/>
 
-            <TextBox TextChanged="Guess_TextChanged" Text="{Binding Input3}" MaxLength="1" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess3"
+            <TextBox VerticalContentAlignment="Center" TextChanged="Guess_TextChanged" Text="{Binding Input3}" MaxLength="1" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess3"
                      FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Grid.Column="2"/>
 
-            <TextBox TextChanged="Guess_TextChanged" Text="{Binding Input4}" MaxLength="1" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess4"
+            <TextBox VerticalContentAlignment="Center" TextChanged="Guess_TextChanged" Text="{Binding Input4}" MaxLength="1" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess4"
                      FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Grid.Column="3"/>
             
             <Label Visibility="{Binding VisibilityNotNumber}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Center" Content="You can only write numbers!!"
