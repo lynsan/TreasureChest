@@ -170,9 +170,14 @@ namespace Treasure.Chest.ViewModels
         public void GoToStart()
         {
             MainWindow.GoToPage(new Start());
+            ResetScore();
         }
 
-        
+        public void ResetScore()
+        {
+            Score = 0;
+        }
+
         public static int GetScore()
         {
           return Score;
