@@ -97,7 +97,7 @@
                      FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Grid.Column="3"/>
             
             <Label Visibility="{Binding VisibilityNotNumber}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Center" Content="You can only write numbers!!"
-                    Foreground="Black" FontSize="20" FontWeight="Bold" VerticalContentAlignment="Bottom"></Label>
+                    FontSize="20" FontWeight="Bold" Foreground="Black" VerticalContentAlignment="Bottom"></Label>
 
 
 
@@ -132,7 +132,7 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Label Content="Number of Tries:" FontFamily="Georgia" FontSize="22" FontWeight="Bold" Foreground="White" Grid.Column="1"/>
+            <Label Content="{Binding NumberOfTries}" FontFamily="Georgia" FontSize="18" FontWeight="Bold" Foreground="White" Grid.Column="1"/>
         </Grid>
 
         <Button x:Name="btnGuess" Content="Guess" HorizontalAlignment="Center" Command="{Binding GuessCommand}"
