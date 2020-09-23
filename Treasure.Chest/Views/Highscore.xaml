@@ -72,6 +72,7 @@
                       CanUserAddRows="False"
                       CanUserResizeColumns="False" HorizontalAlignment="Left" Width="230"
                       CanUserSortColumns="True"
+                      RowHeaderWidth="0"
                        >
 
 
