@@ -165,6 +165,7 @@ namespace Treasure.Chest.ViewModels
             
             if (IsWinner()== true)
             {
+                
                 MainWindow.GoToPage(new Winner());
             }
         }
@@ -175,7 +176,7 @@ namespace Treasure.Chest.ViewModels
             ResetScore();
         }
 
-        public void ResetScore()
+        public static void ResetScore()
         {
             Score = 0;
         }

@@ -12,7 +12,7 @@ namespace Treasure.Chest.ViewModels
 {
     class WinnerViewModel : INotifyPropertyChanged
     {
-        Player player= new Player();
+        Player player = new Player();
         public string MyName { get; set; }
         public ICommand SaveCommand { get; set; }
         public ICommand BackCommand { get; set; }
@@ -24,16 +24,17 @@ namespace Treasure.Chest.ViewModels
 
         public WinnerViewModel()
         {
+            
             BackCommand = new RelayCommand(GoToStart);
-            SaveCommand = new RelayCommand(AddPlayerAndGoToHighScore);
+            SaveCommand = new RelayCommand(AddPlayerAndGoHighScore);
             
         }
 
 
-        public void AddPlayerAndGoToHighScore()
+        public void AddPlayerAndGoHighScore()
         {
             AddPlayer();
-            GoToHighScore();
+            GoToHighscore();
         
         }
 
@@ -43,13 +44,16 @@ namespace Treasure.Chest.ViewModels
             player.Name = MyName;
             player.Score=GameViewModel.GetScore(); 
             PlayerRepository.AddPlayer(player);
+            GameViewModel.ResetScore();
+           
         }
         private void GoToStart()
         {
             MainWindow.GoToPage(new Start());
+
             
         }
-        public void GoToHighScore()
+        public void GoToHighscore()
         {
             MainWindow.GoToPage(new Highscore());
         }
