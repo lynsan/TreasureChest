@@ -36,6 +36,7 @@ namespace Treasure.Chest.ViewModels
             player.Name = MyName;
             player.Score=GameViewModel.GetScore(); 
             PlayerRepository.AddPlayer(player);
+            MainWindow.GoToPage(new Highscore());
         }
         private void GoToStart()
         {
