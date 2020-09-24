@@ -6,29 +6,50 @@ using System.Windows.Input;
 using Treasure.Chest.Models;
 using Treasure.Chest.Repositories;
 using Treasure.Chest.ViewModels.Base;
+using Treasure.Chest.Views;
 
 namespace Treasure.Chest.ViewModels
 {
     class WinnerViewModel : INotifyPropertyChanged
     {
-        Player player= new Player();
-        public string MyName { get; set; }
+        Player player = new Player();
         public ICommand SaveCommand { get; set; }
+        public ICommand BackCommand { get; set; }
+        public string MyName { get; set; }
+        public int Score { get; set; } = GameViewModel.Score;
 
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public WinnerViewModel()
         {
-            SaveCommand = new RelayCommand(AddPlayerName);
+            
+            BackCommand = new RelayCommand(GoToStart);
+            SaveCommand = new RelayCommand(AddPlayerAndGoHighScore);
+            
         }
 
-
-        public void AddPlayerName()
+        public void AddPlayerAndGoHighScore()
         {
-            player.Name = MyName;
-            PlayerRepository.AddPlayer(player);
+            AddPlayer();
+            MainWindow.GoToPage(new Highscore());
 
+        }
+
+        public void AddPlayer()
+        {
+
+            player.Name = MyName;
+            player.Score = Score; 
+            PlayerRepository.AddPlayer(player);
+            GameViewModel.ResetScore();
+           
+        }
+        private void GoToStart()
+        {
+            MainWindow.GoToPage(new Start());
+
+            
         }
     }
 }

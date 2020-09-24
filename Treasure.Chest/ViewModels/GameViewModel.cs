@@ -11,6 +11,7 @@ using Treasure.Chest.ViewModels.Base;
 using Treasure.Chest.Views;
 
 
+
 namespace Treasure.Chest.ViewModels
 {
     class GameViewModel :INotifyPropertyChanged
@@ -19,7 +20,16 @@ namespace Treasure.Chest.ViewModels
         #region Properties
 
         public ICommand GuessCommand { get; set; }
-        
+        public ICommand BackCommand { get; set; }
+        public ICommand RulesCommand { get; set; }
+
+
+        public string Input1 { get; set; }
+        public string Input2 { get; set; }
+        public string Input3 { get; set; }
+        public string Input4 { get; set; }
+        public Visibility VisibilityNotNumber { get; set; } = Visibility.Hidden;
+
         public int Num1 { get; set; }
         public int Num2 { get; set; }
         public int Num3 { get; set; }
@@ -27,24 +37,67 @@ namespace Treasure.Chest.ViewModels
        
         public int[] PlayerGuess { get; set; }
         public int[] CorrectAnswer { get; set; }
-        public int Score { get; set; } = 0;
-
-
-        #endregion
+        public static int Score { get; set; } = 0;
+        public string NumberOfTries { get; set;}
 
         public ObservableCollection<Guess> Guesses { get; set; } = new ObservableCollection<Guess>();
 
+        #endregion
+
+    
 
         public GameViewModel()
         {
             GuessCommand = new RelayCommand(CompareAnswers);
             CorrectAnswer = StartViewModel.SendNumbers();
- 
+            BackCommand = new RelayCommand(GoToStart);
+            RulesCommand = new RelayCommand(ShowRules);
         }
        
-
         public event PropertyChangedEventHandler PropertyChanged;
      
+        //Metod som kollar input i textboxarna och använder tryparse för att göra om 
+        //string properties till int properties. Om input är bokstav så returnerar den false. 
+        public bool IsNumber()
+        {
+            //Försöker lägga Input1 i num1 som en int
+            if (int.TryParse(Input1, out int num1))
+            {
+                Num1 = num1;
+
+                if (int.TryParse(Input2, out int num2))
+                {
+                    Num2 = num2;
+
+                    if (int.TryParse(Input3, out int num3))
+                    {
+                        Num3 = num3;
+
+                        if (int.TryParse(Input4, out int num4))
+                        {
+                            Num4 = num4;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+               return false;
+            }
+            return true;
+        }
 
         public void GetPlayerGuess()
         {
@@ -56,24 +109,37 @@ namespace Treasure.Chest.ViewModels
 
         }
 
+        // Anropar Checkinput och om det är nummer så fortsätter den in i metoden, annars räknas inte
+        // försöket och labeln kommer upp (du får endast skriva nummer.)
         public void CompareAnswers()
         {
-            Score++;
-            GetPlayerGuess();
-            Guess guess = new Guess()
+            if (IsNumber())
             {
-                FirstGuess = new SmallGuess { Number = Num1},
-                SecondGuess = new SmallGuess { Number = Num2},
-                ThirdGuess = new SmallGuess { Number = Num3},
-                FourthGuess = new SmallGuess { Number = Num4}
-            };
-            CheckAnswer.CheckValueAndPosition(guess, CorrectAnswer);
-            Guesses.Add(guess);
-            IsWinner();
-            RegistratePlayer();
-
+                VisibilityNotNumber = Visibility.Hidden;
+                Score++;
+                GetNumberOfTries();
+                GetPlayerGuess();
+                Guess guess = new Guess()
+                {
+                    FirstGuess = new SmallGuess { Number = Num1},
+                    SecondGuess = new SmallGuess { Number = Num2},
+                    ThirdGuess = new SmallGuess { Number = Num3},
+                    FourthGuess = new SmallGuess { Number = Num4}
+                };
+                CheckAnswer.CheckValueAndPosition(guess, CorrectAnswer);
+                Guesses.Add(guess);
+                ClearInput();
+                RegistratePlayer();
+            }
+            else
+            {
+                VisibilityNotNumber = Visibility.Visible;
+            }
+           
             
         }
+
+        //Skriv om för att bli av med PlayerGuess
        public bool IsWinner()
         {
 
@@ -87,23 +153,52 @@ namespace Treasure.Chest.ViewModels
                 {
                     return false;
                 }
+
             }return true;
 
             
         }
 
-        
         public void RegistratePlayer()
         {
             
             if (IsWinner()== true)
             {
+                
                 MainWindow.GoToPage(new Winner());
             }
         }
 
+        public void GoToStart()
+        {
+            MainWindow.GoToPage(new Start());
+            ResetScore();
+        }
 
+        public static void ResetScore()
+        {
+            Score = 0;
+        }
 
-        
+        //Metod som rensar textboxarna
+        public void ClearInput()
+        {
+            Input1 = "";
+            Input2 = "";
+            Input3 = "";
+            Input4 = "";
+        }
+       
+        public void GetNumberOfTries()
+        {
+            NumberOfTries = $"Number Of Tries: {Score}";
+        }
+
+        public void ShowRules()
+        {
+            MainWindow.GoToPage(new Rules());
+        }
+       
+
     }
 }

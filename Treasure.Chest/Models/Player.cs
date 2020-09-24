@@ -9,7 +9,8 @@ namespace Treasure.Chest.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public DateTime PlayTime { get; set; }
         public int Score { get; set; }
+        public DateTime PlayTime { get; set; }
+       
     }
 }

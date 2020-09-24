@@ -28,6 +28,18 @@ namespace Treasure.Chest.Views
 
         }
 
-        
+        //Event för att autotabba till nästa textbox när man skriver en siffra
+        private void Guess_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            if ((sender as TextBox).MaxLength == (sender as TextBox).Text.Length)
+            {
+                var ue = e.OriginalSource as FrameworkElement;
+                e.Handled = true;
+                ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+            }
+        }
+
+
     }
 }

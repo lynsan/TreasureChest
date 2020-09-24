@@ -22,8 +22,6 @@ namespace Treasure.Chest.ViewModels
 
         public static int[] correctAnswer = new int[4];
 
-        public string GameRules { get; set; } = "You are a code breaker, and your goal is to guess the secret code to open \nthe treasure chest. The code is a sequence of numbers between 0 and 9, \nand note that the same number can take place several times. In each round \nafter you make a guess, you will get hints which will lead you closer \nto guessing the secret code. Repeat this until you figure out the secret code. \nThe hints are either GREEN background or YELLOW background: \nGREEN background = your guess is correct and is in the correct position \nYELLOW background = your guess is correct but is in the wrong position";
-
         public StartViewModel()
         {
             PlayCommand = new RelayCommand(GetNumbers);
@@ -31,25 +29,24 @@ namespace Treasure.Chest.ViewModels
             RulesCommand = new RelayCommand(GetRules);
         }
 
-        public void GetNumbers()
+        private void GetNumbers()
         {
             RandomNumbers numbers = new RandomNumbers();
-
-            //Visar siffrorna i en messagebox för att testa att det funkar
-            //MessageBox.Show(numbers.Numbers[0].ToString() + numbers.Numbers[1].ToString() + numbers.Numbers[2].ToString() + numbers.Numbers[3].ToString());
             correctAnswer = numbers.Numbers;
-
             MainWindow.GoToPage(new Game());
         }
-        public void GetHighscore()
+
+        private void GetHighscore()
         {
             MainWindow.GoToPage(new Highscore());
         }
-        public void GetRules()
+
+        private void GetRules()
         {
             MainWindow.GoToPage(new Rules());
         }
 
+        //Skickar det rätta svaret
         public static int[] SendNumbers()
         {
             return correctAnswer;

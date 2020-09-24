@@ -16,15 +16,71 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="btnHighscore" 
+                    Content="Back to start" 
+                    Command="{Binding BackCommand}"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" 
+                    Grid.Column="0" 
+                    Grid.Row="0" 
+                    FontFamily="Georgia" 
+                    FontSize="15" 
+                    FontWeight="Bold" 
+                    Padding="10" 
+                    Width="125" 
+                    BorderThickness="3" 
+                    BorderBrush="Azure">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
+                </Button.Effect>
+
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button Content="How to play" 
+                    HorizontalAlignment="Left" 
+                    Command="{Binding RulesCommand}"
+                    VerticalAlignment="Top" 
+                    Grid.Column="0" 
+                    Grid.Row="1" 
+                    FontFamily="Georgia" 
+                    FontSize="15" 
+                    FontWeight="Bold" 
+                    Padding="10" 
+                    Width="125" 
+                    BorderThickness="3" 
+                    BorderBrush="Azure">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
+                </Button.Effect>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
 
 
         <Grid Grid.Row="1">
@@ -34,8 +90,6 @@
             </Grid.Background>
         </Grid>
 
-        <!--Stackpanel for textboxes in Treasure Chest-->
-        <!--<StackPanel Grid.Row="1" --><!--Grid.Column="0"--><!--/>-->
         <Grid Grid.Row="1" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -50,44 +104,170 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBox Text="{Binding Num1}" MaxLength="1" MinHeight="50" MinWidth="50" BorderBrush="Black" x:Name="Guess1" 
-                     FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Grid.Column="0">
+            
+            <TextBox 
+                     x:Name="Guess1"
+                     TextChanged="Guess_TextChanged" 
+                     Text="{Binding Input1}" 
+                     VerticalContentAlignment="Center" 
+                     MaxLength="1" 
+                     MinHeight="50" 
+                     MinWidth="50" 
+                     BorderBrush="Black"  
+                     FontSize="30" 
+                     BorderThickness="4" 
+                     TextAlignment="Center" 
+                     Grid.Row="1" 
+                     Grid.Column="0">
 
             </TextBox>
 
-            <TextBox Text="{Binding Num2}" MaxLength="1" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess2"
-                     FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+            <TextBox   
+                     x:Name="Guess2"
+                     TextChanged="Guess_TextChanged" 
+                     Text="{Binding Input2}" 
+                     VerticalContentAlignment="Center" 
+                     MaxLength="1" 
+                     MinWidth="50" 
+                     MinHeight="50" 
+                     BorderBrush="Black" 
+                     FontSize="30" 
+                     BorderThickness="4" 
+                     TextAlignment="Center" 
+                     Grid.Row="1" 
+                     Grid.Column="1"/>
 
-            <TextBox Text="{Binding Num3}" MaxLength="1" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess3"
-                     FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Grid.Column="2"/>
+            <TextBox 
+                     x:Name="Guess3"
+                     TextChanged="Guess_TextChanged" 
+                     Text="{Binding Input3}" 
+                     VerticalContentAlignment="Center" 
+                     MaxLength="1" 
+                     MinWidth="50" 
+                     MinHeight="50" 
+                     BorderBrush="Black" 
+                     FontSize="30" 
+                     BorderThickness="4" 
+                     TextAlignment="Center" 
+                     Grid.Row="1" 
+                     Grid.Column="2"/>
 
-            <TextBox Text="{Binding Num4}" MaxLength="1" MinWidth="50" MinHeight="50" BorderBrush="Black" x:Name="Guess4"
-                     FontSize="30" BorderThickness="4" TextAlignment="Center" Grid.Row="1" Grid.Column="3"/>
+            <TextBox 
+                     x:Name="Guess4"
+                     TextChanged="Guess_TextChanged" 
+                     Text="{Binding Input4}" 
+                     VerticalContentAlignment="Center" 
+                     MaxLength="1" 
+                     MinWidth="50" 
+                     MinHeight="50" 
+                     BorderBrush="Black" 
+                     FontSize="30" 
+                     BorderThickness="4" 
+                     TextAlignment="Center" 
+                     Grid.Row="1" 
+                     Grid.Column="3"/>
 
-
+            <Label 
+                     Content="You can only write numbers!!"
+                     Visibility="{Binding VisibilityNotNumber}" 
+                     Grid.Row="2" 
+                     Grid.Column="0" 
+                     Grid.ColumnSpan="4" 
+                     HorizontalAlignment="Center" 
+                     VerticalAlignment="Center" 
+                     FontSize="16" 
+                     FontWeight="Bold" 
+                     FontFamily="Georgia" 
+                     Foreground="Black" 
+                     Background="White" 
+                     Width="255">
+            </Label>
 
         </Grid>
+        
+        <Grid Grid.Column="2"  Grid.RowSpan="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
 
-        <ListBox Grid.ColumnSpan="2" Grid.Column="1" Margin="256,69,57,46" Grid.RowSpan="2"
-                 ItemsSource="{Binding Guesses}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="{Binding FirstGuess.Number}" Background="{Binding FirstGuess.CorrectType, Converter={StaticResource ColorConverter}}" FontSize="20"></Label>
-                        <Label Content="{Binding SecondGuess.Number}" Background="{Binding SecondGuess.CorrectType, Converter={StaticResource ColorConverter}}" FontSize="20"></Label>
-                        <Label Content="{Binding ThirdGuess.Number}" Background="{Binding ThirdGuess.CorrectType, Converter={StaticResource ColorConverter}}" FontSize="20"></Label>
-                        <Label Content="{Binding FourthGuess.Number}" Background="{Binding FourthGuess.CorrectType, Converter={StaticResource ColorConverter}}" FontSize="20"></Label>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+            <Grid.Background>
+                <ImageBrush ImageSource="/Assets/HighscoreBackground.png"/>
 
-        <!--textbox Number of tries-->
-        <StackPanel Grid.Column="2">
-            <Label Content="Number of Tries:" FontSize="22" FontWeight="Bold" Foreground="White"/>
-        </StackPanel>
-        <Button x:Name="btnGuess" Content="Guess" HorizontalAlignment="Center" Command="{Binding GuessCommand}"
-                VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" FontSize="20" FontWeight="Bold" Padding="10">
+            </Grid.Background>
+
+
+            <ListBox 
+                    Grid.ColumnSpan="2" 
+                    Grid.Column="1" 
+                    Grid.RowSpan="2"
+                    Grid.Row="1"
+                    Background="Transparent" 
+                    BorderBrush="Transparent" 
+                    ItemsSource="{Binding Guesses}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label 
+                                   Content="{Binding FirstGuess.Number}" 
+                                   Background="{Binding FirstGuess.CorrectType, Converter={StaticResource ColorConverter}}" 
+                                   FontSize="20">
+                            </Label>
+                            <Label 
+                                   Content="{Binding SecondGuess.Number}" 
+                                   Background="{Binding SecondGuess.CorrectType, Converter={StaticResource ColorConverter}}" 
+                                   FontSize="20">
+                            </Label>
+
+                            <Label 
+                                    Content="{Binding ThirdGuess.Number}" 
+                                    Background="{Binding ThirdGuess.CorrectType, Converter={StaticResource ColorConverter}}" 
+                                    FontSize="20">
+                            </Label>
+
+                            <Label 
+                                    Content="{Binding FourthGuess.Number}" 
+                                    Background="{Binding FourthGuess.CorrectType, Converter={StaticResource ColorConverter}}" 
+                                    FontSize="20">
+                            </Label>
+                            
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <Label 
+                    Content="{Binding NumberOfTries}" 
+                    FontFamily="Georgia" 
+                    FontSize="20" 
+                    FontWeight="Bold" 
+                    Foreground="White"
+                    Grid.Column="1" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Stretch"/>
+        </Grid>
+
+            <Button 
+                    x:Name="btnGuess" 
+                    Command="{Binding GuessCommand}" 
+                    Content="Guess" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Top" 
+                    Grid.Column="1" 
+                    Grid.Row="1" 
+                    FontFamily="Georgia" 
+                    FontSize="20" 
+                    FontWeight="Bold" 
+                    Padding="10" 
+                    Width="156" 
+                    BorderThickness="5" 
+                    BorderBrush="Azure" 
+                    Margin="0,46,0,0">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
             </Button.Effect>

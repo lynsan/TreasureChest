@@ -21,32 +21,78 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        
-        <Button 
-                Content="Play"
-                Command="{Binding PlayCommand}" 
-                Width="100"
-                Height="40"
-                Grid.Column="1"
-                Grid.Row="1"
-                VerticalAlignment="Bottom"
-            />
-        <Button 
-                Content="Highscore"
-                Command="{Binding HighscoreCommand}" 
-                Width="100"
-                Height="40"
-                Grid.Column="1"
-                Grid.Row="2"
-            />
-        <Button 
-                Content="How to play"
-                Command="{Binding RulesCommand}" 
-                Width="100"
-                Height="40"
-                Grid.Column="1"
-                Grid.Row="3"
-                VerticalAlignment="Top"
-            />
+
+        <Button x:Name="btnPlay" 
+                Content="Play" 
+                Command="{Binding PlayCommand}"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Grid.Column="1" 
+                Grid.Row="1" 
+                FontFamily="Georgia" 
+                FontSize="20" 
+                FontWeight="Bold" 
+                Padding="10" 
+                Width="155" 
+                BorderThickness="5" 
+                BorderBrush="Azure">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
+            </Button.Effect>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button x:Name="btnHighscore" 
+                Content="Highscore" 
+                Command="{Binding HighscoreCommand}"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Grid.Column="1" 
+                Grid.Row="2" 
+                FontFamily="Georgia" 
+                FontSize="20" 
+                FontWeight="Bold" 
+                Padding="10" 
+                Width="155" 
+                BorderThickness="5" 
+                BorderBrush="Azure">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
+            </Button.Effect>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button x:Name="btnRules" 
+                Content="How to play" 
+                Command="{Binding RulesCommand}"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Grid.Column="1" 
+                Grid.Row="3" 
+                FontFamily="Georgia" 
+                FontSize="20" 
+                FontWeight="Bold" 
+                Padding="10" 
+                Width="155" 
+                BorderThickness="5" 
+                BorderBrush="Azure">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
+            </Button.Effect>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+  
     </Grid>
 </Page>

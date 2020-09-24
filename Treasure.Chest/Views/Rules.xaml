@@ -8,14 +8,57 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Rules">
 
-        <Grid Margin="-16,-127,-16,-141" >
-            <Grid.Background >
-            <ImageBrush ImageSource="/Assets/EmptyScroll.png"/>
-        </Grid.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
 
-        <StackPanel Margin="-14,103,-14,-70">
-            <Label Content="How to play" FontSize="18" FontWeight="Black" Foreground="Black" HorizontalAlignment="Center" Margin="0,115,0,276" />
-        </StackPanel>
-        <TextBlock Text="{Binding GameRules}" FontSize="15" FontWeight="Bold" Foreground="Black" Margin="149,251,124,227"/>
-        </Grid>
+        <Button x:Name="btnHighscore" 
+                Content="Back to start" 
+                Command="{Binding BackCommand}"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Grid.Column="0" 
+                Grid.Row="0" 
+                Grid.ColumnSpan="3" 
+                FontFamily="Georgia" 
+                FontSize="15" 
+                FontWeight="Bold" 
+                Padding="10" 
+                Width="125" 
+                BorderThickness="3" 
+                BorderBrush="Azure">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
+            </Button.Effect>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Image Source="/Assets/FullScroll.png" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="3"/>
+        <Image Source="/Assets/Rulesl.png" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="2"/>
+        <TextBlock Text="{Binding GameRules}" 
+                   FontFamily="Georgia" 
+                   FontSize="17" 
+                   Background="Transparent" 
+                   Foreground="Black" 
+                   Grid.Column="2" 
+                   Grid.Row="3" 
+                   TextWrapping="Wrap">
+        </TextBlock>
+
+    </Grid>
 </Page>
