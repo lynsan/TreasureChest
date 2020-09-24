@@ -24,8 +24,21 @@
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="btnHighscore" Content="Back to start" HorizontalAlignment="Left" Command="{Binding BackCommand}"
-                VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" FontFamily="Georgia" FontSize="15" FontWeight="Bold" Padding="10" Width="125" BorderThickness="3" BorderBrush="Azure">
+        <Button x:Name="btnHighscore" 
+                Content="Back to start" 
+                Command="{Binding BackCommand}"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Grid.Column="0" 
+                Grid.Row="0" 
+                Grid.ColumnSpan="3" 
+                FontFamily="Georgia" 
+                FontSize="15" 
+                FontWeight="Bold" 
+                Padding="10" 
+                Width="125" 
+                BorderThickness="3" 
+                BorderBrush="Azure">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
             </Button.Effect>
@@ -37,7 +50,15 @@
         </Button>
         <Image Source="/Assets/FullScroll.png" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="3"/>
         <Image Source="/Assets/Rulesl.png" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="2"/>
-        <TextBlock Text="{Binding GameRules}" FontFamily="Georgia" FontSize="17" Background="Transparent" Foreground="Black" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap"></TextBlock>
+        <TextBlock Text="{Binding GameRules}" 
+                   FontFamily="Georgia" 
+                   FontSize="17" 
+                   Background="Transparent" 
+                   Foreground="Black" 
+                   Grid.Column="2" 
+                   Grid.Row="3" 
+                   TextWrapping="Wrap">
+        </TextBlock>
 
     </Grid>
 </Page>

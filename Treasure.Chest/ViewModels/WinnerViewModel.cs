@@ -13,10 +13,9 @@ namespace Treasure.Chest.ViewModels
     class WinnerViewModel : INotifyPropertyChanged
     {
         Player player = new Player();
-        public string MyName { get; set; }
         public ICommand SaveCommand { get; set; }
         public ICommand BackCommand { get; set; }
-
+        public string MyName { get; set; }
         public int Score { get; set; } = GameViewModel.Score;
 
 
@@ -30,19 +29,18 @@ namespace Treasure.Chest.ViewModels
             
         }
 
-
         public void AddPlayerAndGoHighScore()
         {
             AddPlayer();
-            GoToHighscore();
-        
+            MainWindow.GoToPage(new Highscore());
+
         }
 
         public void AddPlayer()
         {
 
             player.Name = MyName;
-            player.Score=GameViewModel.GetScore(); 
+            player.Score = Score; 
             PlayerRepository.AddPlayer(player);
             GameViewModel.ResetScore();
            
@@ -52,10 +50,6 @@ namespace Treasure.Chest.ViewModels
             MainWindow.GoToPage(new Start());
 
             
-        }
-        public void GoToHighscore()
-        {
-            MainWindow.GoToPage(new Highscore());
         }
     }
 }

@@ -40,11 +40,11 @@ namespace Treasure.Chest.ViewModels
         public static int Score { get; set; } = 0;
         public string NumberOfTries { get; set;}
 
+        public ObservableCollection<Guess> Guesses { get; set; } = new ObservableCollection<Guess>();
 
         #endregion
 
     
-        public ObservableCollection<Guess> Guesses { get; set; } = new ObservableCollection<Guess>();
 
         public GameViewModel()
         {
@@ -54,15 +54,13 @@ namespace Treasure.Chest.ViewModels
             RulesCommand = new RelayCommand(ShowRules);
         }
        
-
         public event PropertyChangedEventHandler PropertyChanged;
      
-        // Metod som kollar input i textboxarna och använder tryparse för att göra om 
-        // string properties till int properties. 
-
+        //Metod som kollar input i textboxarna och använder tryparse för att göra om 
+        //string properties till int properties. Om input är bokstav så returnerar den false. 
         public bool IsNumber()
         {
-
+            //Försöker lägga Input1 i num1 som en int
             if (int.TryParse(Input1, out int num1))
             {
                 Num1 = num1;
@@ -131,7 +129,6 @@ namespace Treasure.Chest.ViewModels
                 CheckAnswer.CheckValueAndPosition(guess, CorrectAnswer);
                 Guesses.Add(guess);
                 ClearInput();
-                IsWinner();
                 RegistratePlayer();
             }
             else
@@ -141,6 +138,8 @@ namespace Treasure.Chest.ViewModels
            
             
         }
+
+        //Skriv om för att bli av med PlayerGuess
        public bool IsWinner()
         {
 
@@ -181,12 +180,7 @@ namespace Treasure.Chest.ViewModels
             Score = 0;
         }
 
-        public static int GetScore()
-        {
-          return Score;
-        }
-
-        // Metod som rensar textboxarna
+        //Metod som rensar textboxarna
         public void ClearInput()
         {
             Input1 = "";

@@ -22,9 +22,28 @@
             <RowDefinition Height="50*"></RowDefinition>
         </Grid.RowDefinitions>
         <Image Source="/Assets/Highscore.png" Grid.Column="2"/>
-        <Image Source="/Assets/HighscoreBackground.png" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Stretch="Fill" VerticalAlignment="Top"/>
-        <Button x:Name="btnHighscore" Content="Back to start" HorizontalAlignment="Left" Command="{Binding BackCommand}"
-                VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" FontFamily="Georgia" FontSize="15" FontWeight="Bold" Padding="10" Width="125" BorderThickness="3" BorderBrush="Azure">
+        <Image Source="/Assets/HighscoreBackground.png" 
+               Grid.Column="1" 
+               Grid.Row="1" 
+               Grid.ColumnSpan="3" 
+               Grid.RowSpan="2" 
+               Stretch="Fill" 
+               VerticalAlignment="Top"/>
+        
+        <Button x:Name="btnHighscore" 
+                Content="Back to start" 
+                Command="{Binding BackCommand}"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Grid.Column="0" 
+                Grid.Row="0" 
+                FontFamily="Georgia" 
+                FontSize="15" 
+                FontWeight="Bold" 
+                Padding="10" 
+                Width="125" 
+                BorderThickness="3" 
+                BorderBrush="Azure">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
             </Button.Effect>
@@ -37,19 +56,6 @@
 
         <Grid Grid.Row="2" Grid.Column="2">
 
-          <!--  <ListBox Background="Transparent" Margin="5,0,5,0" ItemsSource="{Binding Players}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Content="{Binding Name}" FontSize="20"></Label>
-                            <Label Content="{Binding Score}" FontSize="20"></Label>
-                            <Label Content="{Binding Time}"  FontSize="20"></Label>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox> -->
-            
-            
         </Grid>
         
         <Border  
@@ -58,7 +64,6 @@
             Grid.Column="2"
             Grid.Row="2" 
             BorderBrush="Transparent">
-
 
 
             <DataGrid x:Name="HighscoreList" 
@@ -91,7 +96,6 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="2*"/>
                     <DataGridTextColumn  Binding="{Binding Score}"  Header="Score" Width="1*"/>
-                    <!--<DataGridTextColumn  Binding="{Binding PlayTime, StringFormat=t}"  Header="Time" Width="2*"/>-->
                 </DataGrid.Columns>
 
 

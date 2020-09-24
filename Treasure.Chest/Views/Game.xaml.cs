@@ -28,8 +28,7 @@ namespace Treasure.Chest.Views
 
         }
 
-        // Event för när texten ändras i textboxarna som autotabbar.
-
+        //Event för att autotabba till nästa textbox när man skriver en siffra
         private void Guess_TextChanged(object sender, TextChangedEventArgs e)
         {
 

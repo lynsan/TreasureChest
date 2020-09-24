@@ -30,7 +30,7 @@ namespace Treasure.Chest.ViewModels
         {
             var players = PlayerRepository.GetPlayers();
 
-            ShowPlayers= players.ToList();
+            ShowPlayers = players.ToList();
 
         }
     
