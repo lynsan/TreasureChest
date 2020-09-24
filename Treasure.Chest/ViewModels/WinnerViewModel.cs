@@ -24,17 +24,16 @@ namespace Treasure.Chest.ViewModels
 
         public WinnerViewModel()
         {
-            SaveCommand = new RelayCommand(AddPlayer);
             BackCommand = new RelayCommand(GoToStart);
-            SaveCommand = new RelayCommand(AddPlayerAndGoHighScore);
+            SaveCommand = new RelayCommand(AddPlayerAndGoToHighScore);
             
         }
 
 
-        public void AddPlayerAndGoHighScore()
+        public void AddPlayerAndGoToHighScore()
         {
             AddPlayer();
-            GetHighscore();
+            GoToHighScore();
         
         }
 
@@ -44,15 +43,13 @@ namespace Treasure.Chest.ViewModels
             player.Name = MyName;
             player.Score=GameViewModel.GetScore(); 
             PlayerRepository.AddPlayer(player);
-            MainWindow.GoToPage(new Highscore());
         }
         private void GoToStart()
         {
             MainWindow.GoToPage(new Start());
-
             
         }
-        public void GetHighscore()
+        public void GoToHighScore()
         {
             MainWindow.GoToPage(new Highscore());
         }
