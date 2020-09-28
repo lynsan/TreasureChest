@@ -196,6 +196,7 @@ namespace Treasure.Chest.ViewModels
 
         public void ShowRules()
         {
+            GameViewModel.ResetScore();
             MainWindow.GoToPage(new Rules());
         }
        
