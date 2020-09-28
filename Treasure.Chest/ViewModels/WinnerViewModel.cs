@@ -34,7 +34,7 @@ namespace Treasure.Chest.ViewModels
         public void AddPlayerAndGoHighScore()
         {
             AddPlayer();
-
+            GameViewModel.ResetScore();
         }
 
         private void AddPlayer()
