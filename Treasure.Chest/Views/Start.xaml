@@ -21,12 +21,13 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
+        <Image Source="/Assets/Title.png" Grid.Column="0" Grid.ColumnSpan="3"/>
 
         <Button x:Name="btnPlay" 
                 Content="Play" 
                 Command="{Binding PlayCommand}"
                 HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
+                VerticalAlignment="Bottom" 
                 Grid.Column="1" 
                 Grid.Row="1" 
                 FontFamily="Georgia" 
@@ -50,7 +51,7 @@
                 Content="Highscore" 
                 Command="{Binding HighscoreCommand}"
                 HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
+                VerticalAlignment="Bottom" 
                 Grid.Column="1" 
                 Grid.Row="2" 
                 FontFamily="Georgia" 
@@ -74,7 +75,7 @@
                 Content="How to play" 
                 Command="{Binding RulesCommand}"
                 HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
+                VerticalAlignment="Bottom" 
                 Grid.Column="1" 
                 Grid.Row="3" 
                 FontFamily="Georgia" 

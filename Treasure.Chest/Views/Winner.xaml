@@ -10,13 +10,14 @@
 
     <Grid>
 
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            
+
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -33,6 +34,27 @@
 
             </Grid.Background>
         </Grid>
+        
+        <!-- Animerar in en öppen skattkista -->
+        <Grid Grid.Row="2" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="4*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Source="/Assets/OpenChest.png" VerticalAlignment="Bottom" Grid.RowSpan="2" HorizontalAlignment="Left"/>
+            <Grid.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Width" From="0" To="200" Duration="0:0:0.4"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Grid.Triggers>
+        </Grid>
+
+
+
 
         <Label Content="Well done pirate!" 
                FontSize="20" 
