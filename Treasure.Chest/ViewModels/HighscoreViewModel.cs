@@ -7,14 +7,16 @@ using Treasure.Chest.ViewModels.Base;
 using Treasure.Chest.Repositories;
 using Treasure.Chest.Views;
 using System.Linq;
-
+using System.ComponentModel;
 
 namespace Treasure.Chest.ViewModels
 {
-    class HighscoreViewModel
+    class HighscoreViewModel: INotifyPropertyChanged
     {
         
         public ICommand BackCommand { get; set; }
+        public ICommand AllTimeCommand { get; set; }
+        public ICommand SevenDaysCommand { get; set; }
         public List<Player> ShowPlayers { get; set; } = new List<Player>();
 
 
@@ -24,7 +26,20 @@ namespace Treasure.Chest.ViewModels
 
 
             BackCommand = new RelayCommand(GoToStart);
+            AllTimeCommand = new RelayCommand(PresentPlayers);
+            SevenDaysCommand = new RelayCommand(SortSevenDays);
+
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void SortSevenDays()
+        {
+            var players = PlayerRepository.GetPlayersByDate();
+
+            ShowPlayers = players.ToList();
+        }
+
 
         public void PresentPlayers()
         {

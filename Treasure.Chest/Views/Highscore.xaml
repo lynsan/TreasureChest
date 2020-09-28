@@ -53,11 +53,64 @@
                 </Style>
             </Button.Resources>
         </Button>
-
-        <Grid Grid.Row="2" Grid.Column="2">
-
-        </Grid>
         
+        <!--knappar för topplistor -->
+        <StackPanel Grid.Row="2" Grid.Column="4">
+        <Button x:Name="btnAllTime" 
+                Content="All Time" 
+                Command="{Binding AllTimeCommand}"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Grid.Column="4" 
+                Grid.Row="3" 
+                FontFamily="Georgia" 
+                FontSize="15" 
+                FontWeight="Bold" 
+                Padding="10" 
+                Width="125" 
+                BorderThickness="3" 
+                BorderBrush="Azure"
+                Margin="10">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
+            </Button.Effect>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+            
+            <Button x:Name="btnSevenDays" 
+                Content="Last 7 Days" 
+                Command="{Binding SevenDaysCommand}"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Grid.Column="4" 
+                Grid.Row="3" 
+                FontFamily="Georgia" 
+                FontSize="15" 
+                FontWeight="Bold" 
+                Padding="10" 
+                Width="125" 
+                BorderThickness="3" 
+                BorderBrush="Azure"
+                Margin="10"
+                >
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="30" ShadowDepth="1" Color="Black"></DropShadowEffect>
+            </Button.Effect>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+           
+        </StackPanel>
+
+
         <Border  
             CornerRadius="0" 
             Background="Transparent"

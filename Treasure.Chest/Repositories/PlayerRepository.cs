@@ -99,6 +99,38 @@ namespace Treasure.Chest.Repositories
                 }
             }
         }
+
+        //Hämtar lista av spelare enligt datum
+        public static IEnumerable<Player> GetPlayersByDate()
+        {
+            string stmt = "SELECT playername, score FROM players WHERE playdate >= current_date - 7 order by score asc limit 10";
+
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                Player player = null;
+                List<Player> players = new List<Player>();
+                conn.Open();
+
+                using (var command = new NpgsqlCommand(stmt, conn))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            player = new Player
+                            {
+                                Name = (string)reader["playername"],
+                                Score = (int)reader["score"],
+                                //PlayTime = (int)reader["playtime"],
+                            };
+                            players.Add(player);
+                        }
+                    }
+                    return players;
+                }
+            }
+        }
         #endregion
     }
 }
