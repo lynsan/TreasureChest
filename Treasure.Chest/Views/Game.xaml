@@ -104,7 +104,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            
+
             <TextBox 
                      x:Name="Guess1"
                      TextChanged="Guess_TextChanged" 
@@ -118,7 +118,10 @@
                      BorderThickness="4" 
                      TextAlignment="Center" 
                      Grid.Row="1" 
-                     Grid.Column="0">
+                     Grid.Column="0" 
+                     FontFamily="Georgia">
+
+
 
             </TextBox>
 
@@ -135,7 +138,8 @@
                      BorderThickness="4" 
                      TextAlignment="Center" 
                      Grid.Row="1" 
-                     Grid.Column="1"/>
+                     Grid.Column="1"
+                     FontFamily="Georgia"/>
 
             <TextBox 
                      x:Name="Guess3"
@@ -150,7 +154,8 @@
                      BorderThickness="4" 
                      TextAlignment="Center" 
                      Grid.Row="1" 
-                     Grid.Column="2"/>
+                     Grid.Column="2"
+                     FontFamily="Georgia"/>
 
             <TextBox 
                      x:Name="Guess4"
@@ -165,7 +170,8 @@
                      BorderThickness="4" 
                      TextAlignment="Center" 
                      Grid.Row="1" 
-                     Grid.Column="3"/>
+                     Grid.Column="3" 
+                     FontFamily="Georgia"/>
 
             <Label 
                      Content="You can only write numbers!!"
@@ -209,31 +215,40 @@
                     Grid.Row="1"
                     Background="Transparent" 
                     BorderBrush="Transparent" 
-                    ItemsSource="{Binding Guesses}">
+                    ItemsSource="{Binding Guesses}" 
+                    HorizontalContentAlignment="Center">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <Label 
                                    Content="{Binding FirstGuess.Number}" 
                                    Background="{Binding FirstGuess.CorrectType, Converter={StaticResource ColorConverter}}" 
-                                   FontSize="20">
+                                   FontSize="30"
+                                   FontFamily="Georgia"
+                                   Padding="10">
                             </Label>
                             <Label 
                                    Content="{Binding SecondGuess.Number}" 
                                    Background="{Binding SecondGuess.CorrectType, Converter={StaticResource ColorConverter}}" 
-                                   FontSize="20">
+                                   FontSize="30"
+                                   FontFamily="Georgia"
+                                   Padding="10">
                             </Label>
 
                             <Label 
                                     Content="{Binding ThirdGuess.Number}" 
                                     Background="{Binding ThirdGuess.CorrectType, Converter={StaticResource ColorConverter}}" 
-                                    FontSize="20">
+                                    FontSize="30" 
+                                    FontFamily="Georgia" 
+                                    Padding="10">
                             </Label>
 
                             <Label 
                                     Content="{Binding FourthGuess.Number}" 
                                     Background="{Binding FourthGuess.CorrectType, Converter={StaticResource ColorConverter}}" 
-                                    FontSize="20">
+                                    FontSize="30"
+                                    FontFamily="Georgia" 
+                                    Padding="10">
                             </Label>
                             
                         </StackPanel>
