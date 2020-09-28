@@ -91,7 +91,22 @@
                HorizontalAlignment="Right" 
                VerticalAlignment="Center" 
                Margin="0,30,30,15"/>
-        
+        <Label 
+                     Content="You must enter a name!"
+                     Visibility="{Binding NoName}" 
+                     Grid.Row="2" 
+                     Grid.Column="1" 
+                     Grid.ColumnSpan="3" 
+                     HorizontalAlignment="Center" 
+                     VerticalAlignment="Bottom" 
+                     FontSize="16" 
+                     FontWeight="Bold" 
+                     FontFamily="Georgia" 
+                     Foreground="Black" 
+                     Background="White" 
+                     >
+        </Label>
+
         <Button x:Name="btnHighscore" 
                 Content="Back to start" 
                 Command="{Binding BackCommand}"
