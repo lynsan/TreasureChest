@@ -15,6 +15,7 @@
     <None Remove="Assets\OpenChest.png" />
     <None Remove="Assets\PaperRollWinner.png" />
     <None Remove="Assets\Rulesl.png" />
+    <None Remove="Assets\Title.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +32,7 @@
     <Resource Include="Assets\OpenChest.png" />
     <Resource Include="Assets\PaperRollWinner.png" />
     <Resource Include="Assets\Rulesl.png" />
+    <Resource Include="Assets\Title.png" />
   </ItemGroup>
 
   <ItemGroup>
