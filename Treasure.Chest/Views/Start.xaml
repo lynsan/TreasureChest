@@ -22,6 +22,7 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Image Source="/Assets/Title.png" Grid.Column="0" Grid.ColumnSpan="3"/>
+        <Image Source="/Assets/Pirate.png" Grid.Row="2" Grid.RowSpan="3"></Image>
 
         <Button x:Name="btnPlay" 
                 Content="Play" 
