@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Navigation;
+using System.Windows.Threading;
 using System.Xaml.Schema;
 using Treasure.Chest.Models;
 using Treasure.Chest.ViewModels.Base;
@@ -40,6 +42,8 @@ namespace Treasure.Chest.ViewModels
         public static int Score { get; set; } = 0;
         public string NumberOfTries { get; set;}
 
+        public int Timer { get; set; } = 0;
+
         public ObservableCollection<Guess> Guesses { get; set; } = new ObservableCollection<Guess>();
 
         #endregion
@@ -52,6 +56,7 @@ namespace Treasure.Chest.ViewModels
             CorrectAnswer = StartViewModel.SendNumbers();
             BackCommand = new RelayCommand(GoToStart);
             RulesCommand = new RelayCommand(ShowRules);
+            StartTimer();
         }
        
         public event PropertyChangedEventHandler PropertyChanged;
@@ -198,7 +203,22 @@ namespace Treasure.Chest.ViewModels
         {
             MainWindow.GoToPage(new Rules());
         }
-       
 
+        public void StartTimer ()
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+
+        }
+
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            Timer++;
+
+        }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using Treasure.Chest.Models;
 using Treasure.Chest.Views;
 
@@ -33,5 +34,7 @@ namespace Treasure.Chest
         {
             ((MainWindow)System.Windows.Application.Current.MainWindow).Main.Content = page;
         }
+
+      
     }
 }
