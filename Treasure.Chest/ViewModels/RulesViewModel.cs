@@ -23,6 +23,7 @@ namespace Treasure.Chest.ViewModels
         }
         public void GoToStart()
         {
+            GameViewModel.ResetScore();
             MainWindow.GoToPage(new Start());
         }
     }   

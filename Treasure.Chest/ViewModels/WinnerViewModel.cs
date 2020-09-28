@@ -37,7 +37,7 @@ namespace Treasure.Chest.ViewModels
 
         }
 
-        public void AddPlayer()
+        private void AddPlayer()
         {
 
             player.Name = MyName;
@@ -56,6 +56,8 @@ namespace Treasure.Chest.ViewModels
         }
         private void GoToStart()
         {
+
+            GameViewModel.ResetScore();
             MainWindow.GoToPage(new Start());
         }
     }
