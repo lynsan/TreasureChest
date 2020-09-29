@@ -91,7 +91,8 @@
                  FontWeight="Bold" 
                  BorderThickness="4">
         </TextBox>
-        <Label   Content="Time:" 
+        <Label Content="Time:" 
+               FontFamily="Georgia" 
                FontSize="18" 
                FontWeight="Bold" 
                Foreground="Black" 
@@ -119,15 +120,15 @@
                Background="Transparent" 
                Grid.Column="3" 
                Grid.Row="2"
-               Height="40" 
-               Width="80" 
+               Height="39" 
+               Width="61" 
                BorderThickness="4" 
                Foreground="Black" 
                HorizontalAlignment="Right" 
                VerticalAlignment="Bottom" 
                VerticalContentAlignment="Center"
                
-               Margin="0,0,30,2"/>
+               Margin="0,0,30,0"/>
 
         <Label Content="{Binding Score}" 
                FontSize="15" 
@@ -143,19 +144,18 @@
                VerticalAlignment="Bottom" 
                Margin="0,0,30,31"/>
         <Label 
-                     Content="You must enter a name!"
-                     Visibility="{Binding NoName}" 
-                     Grid.Row="2" 
-                     Grid.Column="1" 
-                     Grid.ColumnSpan="3" 
-                     HorizontalAlignment="Center" 
-                     VerticalAlignment="Bottom" 
-                     FontSize="16" 
-                     FontWeight="Bold" 
-                     FontFamily="Georgia" 
-                     Foreground="Black" 
-                     Background="White" 
-                     >
+               Content="You must enter a name!"
+               Visibility="{Binding NoName}" 
+               Grid.Row="2" 
+               Grid.Column="1" 
+               Grid.ColumnSpan="3" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Bottom" 
+               FontSize="16" 
+               FontWeight="Bold" 
+               FontFamily="Georgia" 
+               Foreground="Black" 
+               Background="White">
         </Label>
 
         <Button x:Name="btnHighscore" 
