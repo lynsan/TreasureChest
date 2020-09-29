@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Navigation;
+using System.Windows.Threading;
 using System.Xaml.Schema;
 using Treasure.Chest.Models;
 using Treasure.Chest.ViewModels.Base;
@@ -40,6 +42,11 @@ namespace Treasure.Chest.ViewModels
         public static int Score { get; set; } = 0;
         public string NumberOfTries { get; set;}
 
+        public int Timer { get; set; } = 0;
+        public string ShowTimer { get; set; }
+        public static string SendTimer { get; set; }
+
+        DispatcherTimer timer = new DispatcherTimer();
         public ObservableCollection<Guess> Guesses { get; set; } = new ObservableCollection<Guess>();
 
         #endregion
@@ -52,6 +59,7 @@ namespace Treasure.Chest.ViewModels
             CorrectAnswer = StartViewModel.SendNumbers();
             BackCommand = new RelayCommand(GoToStart);
             RulesCommand = new RelayCommand(ShowRules);
+            StartTimer();
         }
        
         public event PropertyChangedEventHandler PropertyChanged;
@@ -117,7 +125,7 @@ namespace Treasure.Chest.ViewModels
             {
                 VisibilityNotNumber = Visibility.Hidden;
                 Score++;
-                GetNumberOfTries();
+                ShowNumberOfTries();
                 GetPlayerGuess();
                 Guess guess = new Guess()
                 {
@@ -158,15 +166,16 @@ namespace Treasure.Chest.ViewModels
 
             
         }
-
+        
         public void RegistratePlayer()
         {
             
             if (IsWinner()== true)
             {
-                
+                StopTimer();
                 MainWindow.GoToPage(new Winner());
             }
+           
         }
 
         public void GoToStart()
@@ -189,7 +198,7 @@ namespace Treasure.Chest.ViewModels
             Input4 = "";
         }
        
-        public void GetNumberOfTries()
+        public void ShowNumberOfTries()
         {
             NumberOfTries = $"Number Of Tries: {Score}";
         }
@@ -199,7 +208,26 @@ namespace Treasure.Chest.ViewModels
             GameViewModel.ResetScore();
             MainWindow.GoToPage(new Rules());
         }
-       
 
+        public void StartTimer ()
+        {
+
+            timer.Interval = new TimeSpan(0,0,1);
+            timer.Tick += Timer_Tick;
+            timer.Start(); 
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            Timer++;
+            ShowTimer = string.Format("{0:mm\\:ss}", TimeSpan.FromSeconds(this.Timer).Duration());
+            SendTimer = ShowTimer;
+        }
+
+        public void StopTimer()
+        {
+            timer.Stop();
+        }
+ 
     }
 }

@@ -30,6 +30,18 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        
+         <Label 
+             x:Name="LblTime" 
+             Content="{Binding ShowTimer}" 
+             Grid.Column="1" 
+             HorizontalAlignment="Center" 
+             VerticalAlignment="Center"
+             FontSize="20" 
+             Foreground="Black" 
+             FontFamily="Georgia" >
+             
+         </Label>
 
         <Grid Grid.Row="0" Grid.Column="0">
             <Grid.RowDefinitions>
@@ -37,6 +49,7 @@
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
 
+            
             <Button x:Name="btnHighscore" 
                     Content="Back to start" 
                     Command="{Binding BackCommand}"
