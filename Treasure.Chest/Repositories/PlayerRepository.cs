@@ -19,7 +19,7 @@ namespace Treasure.Chest.Repositories
         #region Create
         public static int AddPlayer(Player player)
         {
-            string stmt = "INSERT INTO players (playername, score) values(@playername, @score) returning id";
+            string stmt = "INSERT INTO players (playername, score, playtime) values(@playername, @score, @playtime) returning id";
 
             using (var conn = new NpgsqlConnection(connectionString))
             {
@@ -29,7 +29,7 @@ namespace Treasure.Chest.Repositories
                 {
                     command.Parameters.AddWithValue("playername", player.Name);
                     command.Parameters.AddWithValue("score", player.Score);
-                    //command.Parameters.AddWithValue("playtime", player.PlayTime);
+                    command.Parameters.AddWithValue("playtime", player.PlayTime);
                     int id = (int)command.ExecuteScalar();
                     player.Id = id;
                     return id;
@@ -72,7 +72,7 @@ namespace Treasure.Chest.Repositories
 
         public static IEnumerable<Player> GetPlayers()
         {
-            string stmt = "SELECT playername, score FROM players order by score asc limit 10";
+            string stmt = "SELECT playername, score, playtime FROM players order by score asc, playtime asc limit 10";
 
             using(var conn = new NpgsqlConnection(connectionString))
             {
@@ -90,7 +90,7 @@ namespace Treasure.Chest.Repositories
                             {
                                 Name = (string)reader["playername"],
                                 Score = (int)reader["score"],
-                                //PlayTime = (int)reader["playtime"],
+                                PlayTime = (string)reader["playtime"],
                             };
                             players.Add(player);
                         }

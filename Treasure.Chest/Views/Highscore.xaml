@@ -96,6 +96,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="2*"/>
                     <DataGridTextColumn  Binding="{Binding Score}"  Header="Score" Width="1*"/>
+                    <DataGridTextColumn Binding="{Binding PlayTime}" Header=" Time" Width="1*"/>
                 </DataGrid.Columns>
 
 
