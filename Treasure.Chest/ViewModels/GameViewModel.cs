@@ -37,7 +37,6 @@ namespace Treasure.Chest.ViewModels
         public int Num3 { get; set; }
         public int Num4 { get; set; }
        
-        public int[] PlayerGuess { get; set; }
         public int[] CorrectAnswer { get; set; }
         public static int Score { get; set; } = 0;
         public string NumberOfTries { get; set;}
@@ -107,16 +106,6 @@ namespace Treasure.Chest.ViewModels
             return true;
         }
 
-        public void GetPlayerGuess()
-        {
-            int[] playerGuess = new int[]
-            {
-                Num1,Num2, Num3, Num4
-            };
-            PlayerGuess = playerGuess;
-
-        }
-
         // Anropar Checkinput och om det är nummer så fortsätter den in i metoden, annars räknas inte
         // försöket och labeln kommer upp (du får endast skriva nummer.)
         public void CompareAnswers()
@@ -126,7 +115,6 @@ namespace Treasure.Chest.ViewModels
                 VisibilityNotNumber = Visibility.Hidden;
                 Score++;
                 ShowNumberOfTries();
-                GetPlayerGuess();
                 Guess guess = new Guess()
                 {
                     FirstGuess = new SmallGuess { Number = Num1},
@@ -137,7 +125,7 @@ namespace Treasure.Chest.ViewModels
                 CheckAnswer.CheckValueAndPosition(guess, CorrectAnswer);
                 Guesses.Add(guess);
                 ClearInput();
-                RegistratePlayer();
+                RegistratePlayer(guess);
             }
             else
             {
@@ -147,30 +135,26 @@ namespace Treasure.Chest.ViewModels
             
         }
 
-        //Skriv om för att bli av med PlayerGuess
-       public bool IsWinner()
+       public bool IsWinner(Guess guess)
         {
-
-            for (int i = 0; i < PlayerGuess.Length; i++)
+            if (guess.FirstGuess.CorrectType == CorrectType.CorrectNumberAndPlace
+                && guess.SecondGuess.CorrectType == CorrectType.CorrectNumberAndPlace 
+                && guess.ThirdGuess.CorrectType == CorrectType.CorrectNumberAndPlace 
+                && guess.FourthGuess.CorrectType == CorrectType.CorrectNumberAndPlace)
             {
-                if (PlayerGuess[i] == CorrectAnswer[i])
-                {
-                    
-                }
-                else
-                {
-                    return false;
-                }
-
-            }return true;
-
+                return true;
+            }
+            else
+            {
+                return false;
+            }
             
         }
         
-        public void RegistratePlayer()
+        public void RegistratePlayer(Guess guess)
         {
             
-            if (IsWinner()== true)
+            if (IsWinner(guess)== true)
             {
                 StopTimer();
                 MainWindow.GoToPage(new Winner());
