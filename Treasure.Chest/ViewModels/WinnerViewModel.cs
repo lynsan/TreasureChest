@@ -18,6 +18,7 @@ namespace Treasure.Chest.ViewModels
         public ICommand BackCommand { get; set; }
         public string MyName { get; set; }
         public int Score { get; set; } = GameViewModel.Score;
+        public string Time { get; set; } = GameViewModel.SendTimer;
         public Visibility NoName { get; set; } = Visibility.Hidden;
 
 
@@ -42,6 +43,8 @@ namespace Treasure.Chest.ViewModels
 
             player.Name = MyName;
             player.Score = Score;
+            player.PlayTime = Time;
+
             try
             {
                 PlayerRepository.AddPlayer(player);

@@ -33,11 +33,11 @@
         
          <Label 
              x:Name="LblTime" 
-             Content="{Binding Timer}" 
+             Content="{Binding ShowTimer}" 
              Grid.Column="1" 
              HorizontalAlignment="Center" 
-             VerticalAlignment="Center"  
-             FontSize="30" 
+             VerticalAlignment="Center"
+             FontSize="20" 
              Foreground="Black" 
              FontFamily="Georgia" >
              
