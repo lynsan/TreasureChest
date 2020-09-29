@@ -39,40 +39,9 @@ namespace Treasure.Chest.Repositories
 
         #endregion
         #region READ
-        //Hämta en specifik spelare (ett objekt av typen spelare)
-
-        //public Player GetPlayer(string playerName, int score)
-        //{
-        //    string stmt = "select playername, score, from players where score=@score";
-
-        //    using (var conn = new NpgsqlConnection(connectionString))
-        //    {
-        //        Player player = null;  
-        //        conn.Open();
-        //        using (var command = new NpgsqlCommand(stmt, conn))
-        //        using (var reader = command.ExecuteReader())
-        //        {
-        //            command.Parameters.AddWithValue("playername", playerName);
-        //            command.Parameters.AddWithValue("score", score);
-        //            //command.Parameters.AddWithValue("playtime", playTime);
-
-        //            while (reader.Read())
-        //            {
-        //                player = new Player
-        //                {
-        //                    Name = (string)reader["playername"],
-        //                    Score = (int)reader["score"],
-        //                    //PlayTime = (int)reader["playtime"],
-        //                };
-        //            }
-        //        }  
-        //        return player;
-        //    }
-        //}
-
+       
         public static IEnumerable<Player> GetPlayers(string stmt)
         {
-            string stmt = "SELECT playername, score, playtime FROM players order by score asc, playtime asc limit 10";
 
             using(var conn = new NpgsqlConnection(connectionString))
             {

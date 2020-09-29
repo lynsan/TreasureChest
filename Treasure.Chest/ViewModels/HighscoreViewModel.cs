@@ -35,7 +35,7 @@ namespace Treasure.Chest.ViewModels
 
         private void SortSevenDays()
         {
-            string stmt = "SELECT playername, score FROM players WHERE playdate >= current_date - 7 order by score asc limit 10";
+            string stmt = "SELECT playername, score, playtime FROM players WHERE playdate >= current_date - 7 order by score asc, playtime asc limit 10";
             var players = PlayerRepository.GetPlayers(stmt);
 
             ShowPlayers = players.ToList();
@@ -44,7 +44,7 @@ namespace Treasure.Chest.ViewModels
 
         public void PresentPlayers()
         {
-            string stmt = "SELECT playername, score FROM players order by score asc limit 10";
+            string stmt = "SELECT playername, score, playtime FROM players order by score asc, playtime asc limit 10";
             var players = PlayerRepository.GetPlayers(stmt);
 
             ShowPlayers = players.ToList();
