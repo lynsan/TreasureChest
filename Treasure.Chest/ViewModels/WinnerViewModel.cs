@@ -35,7 +35,7 @@ namespace Treasure.Chest.ViewModels
         public void AddPlayerAndGoHighScore()
         {
             AddPlayer();
-            GameViewModel.ResetScore();
+            GameViewModel.ResetGame();
         }
 
         private void AddPlayer()
@@ -48,7 +48,7 @@ namespace Treasure.Chest.ViewModels
             try
             {
                 PlayerRepository.AddPlayer(player);
-                GameViewModel.ResetScore();
+                GameViewModel.ResetGame();
                 MainWindow.GoToPage(new Highscore());
             }
             catch (Exception)
@@ -60,7 +60,7 @@ namespace Treasure.Chest.ViewModels
         private void GoToStart()
         {
 
-            GameViewModel.ResetScore();
+            GameViewModel.ResetGame();
             MainWindow.GoToPage(new Start());
         }
     }

@@ -165,12 +165,13 @@ namespace Treasure.Chest.ViewModels
         public void GoToStart()
         {
             MainWindow.GoToPage(new Start());
-            ResetScore();
+            ResetGame();
         }
 
-        public static void ResetScore()
+        public static void ResetGame()
         {
             Score = 0;
+            SendTimer = "";
         }
 
         //Metod som rensar textboxarna
@@ -189,7 +190,7 @@ namespace Treasure.Chest.ViewModels
 
         public void ShowRules()
         {
-            GameViewModel.ResetScore();
+            GameViewModel.ResetGame();
             MainWindow.GoToPage(new Rules());
         }
 
