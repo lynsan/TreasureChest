@@ -50,6 +50,11 @@
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <EventTrigger.Actions>
+                        <SoundPlayerAction Source="/Assets/Sounds/Winner.wav"/>
+                    </EventTrigger.Actions>
+                </EventTrigger>
             </Grid.Triggers>
         </Grid>
 
