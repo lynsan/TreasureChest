@@ -102,7 +102,7 @@
 
         <Grid Grid.Row="1">
             <Grid.Background>
-                <ImageBrush ImageSource="/Assets/Chest.png"/>
+                <ImageBrush ImageSource="/Assets/Images/Chest.png"/>
 
             </Grid.Background>
         </Grid>
@@ -220,7 +220,7 @@
             </Grid.RowDefinitions>
 
             <Grid.Background>
-                <ImageBrush ImageSource="/Assets/HighscoreBackground.png"/>
+                <ImageBrush ImageSource="/Assets/Images/HighscoreBackground.png"/>
 
             </Grid.Background>
 

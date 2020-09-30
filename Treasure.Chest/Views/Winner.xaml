@@ -30,7 +30,7 @@
 
         <Grid Grid.ColumnSpan="3"  Grid.RowSpan="3" Grid.Column="1" Grid.Row="1">
             <Grid.Background >
-                <ImageBrush ImageSource="/Assets/FullScroll.png" />
+                <ImageBrush ImageSource="/Assets/Images/FullScroll.png" />
 
             </Grid.Background>
         </Grid>
@@ -41,7 +41,7 @@
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="4*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Image Source="/Assets/OpenChest.png" VerticalAlignment="Bottom" Grid.RowSpan="2" HorizontalAlignment="Left"/>
+            <Image Source="/Assets/Images/OpenChest.png" VerticalAlignment="Bottom" Grid.RowSpan="2" HorizontalAlignment="Left"/>
             <Grid.Triggers>
                 <EventTrigger RoutedEvent="Window.Loaded">
                     <BeginStoryboard>

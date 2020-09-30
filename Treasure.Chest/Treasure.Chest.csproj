@@ -13,7 +13,6 @@
     <None Remove="Assets\Highscore.png" />
     <None Remove="Assets\HighscoreBackground.png" />
     <None Remove="Assets\OpenChest.png" />
-    <None Remove="Assets\PaperRollWinner.png" />
     <None Remove="Assets\Pirate.png" />
     <None Remove="Assets\Pirate2.png" />
     <None Remove="Assets\Rulesl.png" />
@@ -28,19 +27,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\Beach.jpg" />
-    <Resource Include="Assets\Chest.png" />
-    <Resource Include="Assets\FullScroll.png" />
-    <Resource Include="Assets\Highscore.png" />
-    <Resource Include="Assets\HighscoreBackground.png" />
-    <Resource Include="Assets\OpenChest.png" />
-    <Resource Include="Assets\PaperRollWinner.png" />
-    <Resource Include="Assets\Pirate.png" />
-    <Resource Include="Assets\Pirate2.png" />
-    <Resource Include="Assets\Rulesl.png" />
+    <Resource Include="Assets\Images\Beach.jpg" />
+    <Resource Include="Assets\Images\Chest.png" />
+    <Resource Include="Assets\Images\FullScroll.png" />
+    <Resource Include="Assets\Images\Highscore.png" />
+    <Resource Include="Assets\Images\HighscoreBackground.png" />
+    <Resource Include="Assets\Images\OpenChest.png" />
+    <Resource Include="Assets\Images\Pirate.png" />
+    <Resource Include="Assets\Images\Pirate2.png" />
+    <Resource Include="Assets\Images\Rulesl.png" />
     <Resource Include="Assets\Sounds\Swoosh.wav" />
     <Resource Include="Assets\Sounds\Winner.wav" />
-    <Resource Include="Assets\Title.png" />
+    <Resource Include="Assets\Images\Title.png" />
   </ItemGroup>
 
   <ItemGroup>

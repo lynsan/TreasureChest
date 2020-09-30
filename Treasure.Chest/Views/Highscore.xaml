@@ -21,8 +21,8 @@
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="50*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Image Source="/Assets/Highscore.png" Grid.Column="2"/>
-        <Image Source="/Assets/HighscoreBackground.png" 
+        <Image Source="/Assets/Images/Highscore.png" Grid.Column="2"/>
+        <Image Source="/Assets/Images/HighscoreBackground.png" 
                Grid.Column="1" 
                Grid.Row="1" 
                Grid.ColumnSpan="3" 
