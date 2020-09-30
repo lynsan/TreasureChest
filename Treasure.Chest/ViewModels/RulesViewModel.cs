@@ -15,7 +15,6 @@ namespace Treasure.Chest.ViewModels
             "\n" +
             " \nThe code is a sequence of numbers between 0 and 9, and note that the same number can take place several times. " +
             "After you make a guess, you will get hints which will lead you closer to guessing the secret code. " +
-            //"Repeat this until you figure out the secret code. The hints are either GREEN background or YELLOW background: " +
             "\n" +
             "\nGREEN background = your guess is correct and is in the correct position " +
             "\nYELLOW background = your guess is correct but is in the wrong position";

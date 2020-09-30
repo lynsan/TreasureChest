@@ -278,7 +278,7 @@
                     FontFamily="Georgia" 
                     FontSize="20" 
                     FontWeight="Bold" 
-                    Foreground="White"
+                    Foreground="Black"
                     Grid.Column="1" 
                     HorizontalAlignment="Center" 
                     VerticalAlignment="Stretch"/>
