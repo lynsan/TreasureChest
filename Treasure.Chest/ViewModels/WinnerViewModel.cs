@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Windows;
 using System.Windows.Input;
 using Treasure.Chest.Models;
 using Treasure.Chest.Repositories;
@@ -17,6 +18,8 @@ namespace Treasure.Chest.ViewModels
         public ICommand BackCommand { get; set; }
         public string MyName { get; set; }
         public int Score { get; set; } = GameViewModel.Score;
+        public string Time { get; set; } = GameViewModel.SendTimer;
+        public Visibility NoName { get; set; } = Visibility.Hidden;
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -32,24 +35,33 @@ namespace Treasure.Chest.ViewModels
         public void AddPlayerAndGoHighScore()
         {
             AddPlayer();
-            MainWindow.GoToPage(new Highscore());
-
+            GameViewModel.ResetScore();
         }
 
-        public void AddPlayer()
+        private void AddPlayer()
         {
 
             player.Name = MyName;
-            player.Score = Score; 
-            PlayerRepository.AddPlayer(player);
-            GameViewModel.ResetScore();
+            player.Score = Score;
+            player.PlayTime = Time;
+
+            try
+            {
+                PlayerRepository.AddPlayer(player);
+                GameViewModel.ResetScore();
+                MainWindow.GoToPage(new Highscore());
+            }
+            catch (Exception)
+            {
+                NoName = Visibility.Visible;
+            }
            
         }
         private void GoToStart()
         {
-            MainWindow.GoToPage(new Start());
 
-            
+            GameViewModel.ResetScore();
+            MainWindow.GoToPage(new Start());
         }
     }
 }

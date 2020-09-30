@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Treasure.Chest"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Treasure Chest" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
-        <ImageBrush ImageSource="/Assets/Beach.jpg"/>
+        <ImageBrush ImageSource="/Assets/Images/Beach.jpg"/>
         </Grid.Background>
-        <Frame x:Name="Main">
+        <Frame x:Name="Main" NavigationUIVisibility="Hidden">
             
         </Frame>
     </Grid>

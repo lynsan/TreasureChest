@@ -48,8 +48,8 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Image Source="/Assets/FullScroll.png" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="3"/>
-        <Image Source="/Assets/Rulesl.png" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="2"/>
+        <Image Source="/Assets/Images/FullScroll.png" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="3"/>
+        <Image Source="/Assets/Images/Rulesl.png" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="2"/>
         <TextBlock Text="{Binding GameRules}" 
                    FontFamily="Georgia" 
                    FontSize="17" 

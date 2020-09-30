@@ -10,13 +10,14 @@
 
     <Grid>
 
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            
+
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -29,12 +30,39 @@
 
         <Grid Grid.ColumnSpan="3"  Grid.RowSpan="3" Grid.Column="1" Grid.Row="1">
             <Grid.Background >
-                <ImageBrush ImageSource="/Assets/FullScroll.png" />
+                <ImageBrush ImageSource="/Assets/Images/FullScroll.png" />
 
             </Grid.Background>
         </Grid>
 
+        <!-- Animerar in en öppen skattkista -->
+        <Grid Grid.Row="2" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="4*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Source="/Assets/Images/OpenChest.png" VerticalAlignment="Bottom" Grid.RowSpan="2" HorizontalAlignment="Left"/>
+            <Grid.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Width" From="0" To="200" Duration="0:0:0.4"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <EventTrigger.Actions>
+                        <SoundPlayerAction Source="/Assets/Sounds/Winner.wav"/>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Grid.Triggers>
+        </Grid>
+
+
+
+
         <Label Content="Well done pirate!" 
+               FontFamily="Georgia" 
                FontSize="20" 
                FontWeight="Black" 
                Foreground="Black" 
@@ -42,16 +70,17 @@
                Grid.ColumnSpan="3" 
                Grid.Row="1" 
                HorizontalAlignment="Center" 
-               VerticalAlignment="Center" >
+               VerticalAlignment="Bottom" >
         </Label>
 
         <Label Content="Name:" 
+               FontFamily="Georgia" 
                FontSize="18" 
                FontWeight="Bold" 
                Foreground="Black" 
                Grid.Column="1" 
                Grid.Row="2" 
-               HorizontalAlignment="Center" 
+               HorizontalAlignment="Right" 
                VerticalAlignment="Center">
         </Label>
 
@@ -65,10 +94,23 @@
                  HorizontalAlignment="Center"
                  FontSize="16" 
                  FontWeight="Bold" 
+                 FontFamily="Georgia"
                  BorderThickness="4">
         </TextBox>
+        <Label Content="Time:" 
+               FontFamily="Georgia" 
+               FontSize="18" 
+               FontWeight="Bold" 
+               Foreground="Black" 
+               Grid.Column="3" 
+               Grid.Row="2" 
+               Grid.ColumnSpan="1" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Bottom">
+        </Label>
 
-        <Label Content="Points:" 
+        <Label Content="Points:"
+               FontFamily="Georgia" 
                FontSize="18" 
                FontWeight="Bold" 
                Foreground="Black" 
@@ -78,7 +120,23 @@
                HorizontalAlignment="Left" 
                VerticalAlignment="Center"/>
 
+        <Label Content="{Binding Time}" 
+               FontFamily="Georgia"
+               FontSize="15" 
+               FontWeight="Bold" 
+               Background="Transparent" 
+               Grid.Column="3" 
+               Grid.Row="2"
+               Height="35" 
+               Width="80" 
+               BorderThickness="4" 
+               Foreground="Black" 
+               HorizontalAlignment="Right" 
+               VerticalAlignment="Bottom" 
+               VerticalContentAlignment="Center" />
+
         <Label Content="{Binding Score}" 
+               FontFamily="Georgia"
                FontSize="15" 
                FontWeight="Bold" 
                Background="Transparent" 
@@ -89,9 +147,23 @@
                BorderThickness="4" 
                Foreground="Black" 
                HorizontalAlignment="Right" 
-               VerticalAlignment="Center" 
-               Margin="0,30,30,15"/>
-        
+               VerticalAlignment="Bottom" 
+               Margin="0,0,30,31"/>
+        <Label 
+               Content="You must enter a name!"
+               Visibility="{Binding NoName}" 
+               Grid.Row="2" 
+               Grid.Column="1" 
+               Grid.ColumnSpan="3" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Bottom" 
+               FontSize="16" 
+               FontWeight="Bold" 
+               FontFamily="Georgia" 
+               Foreground="Black" 
+               Background="White">
+        </Label>
+
         <Button x:Name="btnHighscore" 
                 Content="Back to start" 
                 Command="{Binding BackCommand}"
@@ -123,7 +195,7 @@
                  VerticalAlignment="Top" 
                  Grid.Row="3" 
                  Grid.Column="2" 
-                 FontFamily="Gerorgia" 
+                 FontFamily="Georgia" 
                  FontSize="20" 
                  FontWeight="Bold" 
                  Padding="10" 

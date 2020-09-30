@@ -21,12 +21,31 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
+        <Image Source="/Assets/Images/Title.png" Grid.Column="0" Grid.ColumnSpan="3"/>
+        
+        <Image Grid.Row="2" Grid.RowSpan="3">
+            <Image.Style>
+                <Style TargetType="{x:Type Image}">
+                    <Setter Property="Source" Value="/Assets/Images/Pirate.png"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Source" Value="/Assets/Images/Pirate2.png"/>
+                        </Trigger>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <EventTrigger.Actions>
+                                <SoundPlayerAction Source="/Assets/Sounds/Swoosh.wav"/>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
 
         <Button x:Name="btnPlay" 
                 Content="Play" 
                 Command="{Binding PlayCommand}"
                 HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
+                VerticalAlignment="Bottom" 
                 Grid.Column="1" 
                 Grid.Row="1" 
                 FontFamily="Georgia" 
@@ -50,7 +69,7 @@
                 Content="Highscore" 
                 Command="{Binding HighscoreCommand}"
                 HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
+                VerticalAlignment="Bottom" 
                 Grid.Column="1" 
                 Grid.Row="2" 
                 FontFamily="Georgia" 
@@ -74,7 +93,7 @@
                 Content="How to play" 
                 Command="{Binding RulesCommand}"
                 HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
+                VerticalAlignment="Bottom" 
                 Grid.Column="1" 
                 Grid.Row="3" 
                 FontFamily="Georgia" 
