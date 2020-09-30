@@ -15,7 +15,10 @@
     <None Remove="Assets\OpenChest.png" />
     <None Remove="Assets\PaperRollWinner.png" />
     <None Remove="Assets\Pirate.png" />
+    <None Remove="Assets\Pirate2.png" />
     <None Remove="Assets\Rulesl.png" />
+    <None Remove="Assets\Sounds\Swoosh.wav" />
+    <None Remove="Assets\Sounds\Winner.wav" />
     <None Remove="Assets\Title.png" />
   </ItemGroup>
 
@@ -33,7 +36,10 @@
     <Resource Include="Assets\OpenChest.png" />
     <Resource Include="Assets\PaperRollWinner.png" />
     <Resource Include="Assets\Pirate.png" />
+    <Resource Include="Assets\Pirate2.png" />
     <Resource Include="Assets\Rulesl.png" />
+    <Resource Include="Assets\Sounds\Swoosh.wav" />
+    <Resource Include="Assets\Sounds\Winner.wav" />
     <Resource Include="Assets\Title.png" />
   </ItemGroup>
 

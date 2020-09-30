@@ -50,6 +50,11 @@
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <EventTrigger.Actions>
+                        <SoundPlayerAction Source="/Assets/Sounds/Winner.wav"/>
+                    </EventTrigger.Actions>
+                </EventTrigger>
             </Grid.Triggers>
         </Grid>
 
@@ -92,9 +97,8 @@
                  FontFamily="Georgia"
                  BorderThickness="4">
         </TextBox>
-        <Label 
-               Content="Time:" 
-               FontFamily="Georgia"
+        <Label Content="Time:" 
+               FontFamily="Georgia" 
                FontSize="18" 
                FontWeight="Bold" 
                Foreground="Black" 
@@ -146,19 +150,18 @@
                VerticalAlignment="Bottom" 
                Margin="0,0,30,31"/>
         <Label 
-                     Content="You must enter a name!"
-                     Visibility="{Binding NoName}" 
-                     Grid.Row="2" 
-                     Grid.Column="1" 
-                     Grid.ColumnSpan="3" 
-                     HorizontalAlignment="Center" 
-                     VerticalAlignment="Bottom" 
-                     FontSize="16" 
-                     FontWeight="Bold" 
-                     FontFamily="Georgia" 
-                     Foreground="Black" 
-                     Background="White" 
-                     >
+               Content="You must enter a name!"
+               Visibility="{Binding NoName}" 
+               Grid.Row="2" 
+               Grid.Column="1" 
+               Grid.ColumnSpan="3" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Bottom" 
+               FontSize="16" 
+               FontWeight="Bold" 
+               FontFamily="Georgia" 
+               Foreground="Black" 
+               Background="White">
         </Label>
 
         <Button x:Name="btnHighscore" 
