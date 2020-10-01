@@ -21,10 +21,6 @@ namespace Treasure.Chest.Repositories
         {
             string stmt = "INSERT INTO players (playername, score, playtime) values(@playername, @score, @playtime) returning id";
 
-            try
-            {
-
-           
             using (var conn = new NpgsqlConnection(connectionString))
             {
                 conn.Open();
@@ -37,25 +33,6 @@ namespace Treasure.Chest.Repositories
                     int id = (int)command.ExecuteScalar();
                     player.Id = id;
                     return id;
-                }
-            }
-            }
-             catch (Exception)
-            {
-                player.Name = "NoName";
-                using (var conn = new NpgsqlConnection(connectionString))
-                {
-                    conn.Open();
-                    using (var command = new NpgsqlCommand(stmt, conn))
-
-                    {
-                        command.Parameters.AddWithValue("playername", player.Name);
-                        command.Parameters.AddWithValue("score", player.Score);
-                        //command.Parameters.AddWithValue("playtime", player.PlayTime);
-                        int id = (int)command.ExecuteScalar();
-                        player.Id = id;
-                        return id;
-                    }
                 }
             }
         }

@@ -44,18 +44,19 @@ namespace Treasure.Chest.ViewModels
             player.Name = MyName;
             player.Score = Score;
             player.PlayTime = Time;
-
-            try
+            if (MyName == "")
+            {
+                NoName = Visibility.Visible;
+            }
+            else
             {
                 PlayerRepository.AddPlayer(player);
                 GameViewModel.ResetGame();
                 MainWindow.GoToPage(new Highscore());
             }
-            catch (Exception)
-            {
-                NoName = Visibility.Visible;
-            }
-           
+
+
+
         }
         private void GoToStart()
         {
