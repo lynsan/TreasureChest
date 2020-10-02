@@ -44,7 +44,7 @@ namespace Treasure.Chest.ViewModels
             player.Name = MyName;
             player.Score = Score;
             player.PlayTime = Time;
-            if (MyName == "")
+            if (MyName == "" || MyName == null)
             {
                 NoName = Visibility.Visible;
             }
